@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/list_editcar.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav id="js_header">
+      <!-- header part -->
+      <div class="logo">
+        <img src="../assets/images/Turbo trip.png" alt="logo" />
+      </div>
+      <ul class="snip1143">
+        <li class="current"><a href="#" data-hover="Home">Home</a></li>
+        <li>
+          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
+        </li>
+        <li>
+          <a href="../pages/dri_notify.html" data-hover="Notification"
+            >Notification</a
+          >
+        </li>
+        <li>
+          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
+        </li>
+      </ul>
+
+      <div class="user_profile">
+        <a href="../pages/dri_profile.html">
+          <img
+            src="../assets/images/gpro.png"
+            alt="use_pro"
+            class="user_profile1"
+        /></a>
+      </div>
+    </nav>
+    <div class="list_1">
+      <form action="#" id="cars_detail">
+        <div class="l_1">
+          <label>Car-Image:</label>
+          <input type="url" id="ca_r" required /><br />
+        </div>
+        <div class="l_2">
+          <label>Car-Reg-No:</label>
+          <input
+            type="text"
+            id="ca_r1"
+            required
+            pattern="^[A-Za-z]{2}[-][0-9]{1,2}[-][A-Za-z]{1,2}[-][0-9]{3,4}$"
+          /><br />
+        </div>
+        <div class="l_3">
+          <label>Car-Model:</label>
+          <input
+            type="text"
+            id="ca_r2"
+            required
+            pattern="[A-Za-z0-9 ]{1,18}"
+          /><br />
+        </div>
+        <div class="l_4">
+          <label>Car-Details: </label>
+          <input
+            type="textarea"
+            id="ca_r3"
+            required
+            pattern="[A-Za-z ]{1,20}"
+          /><br />
+        </div>
+        <input type="submit" value="Save" id="hello4" />
+        <input type="submit" value="Delete" id="hello5" />
+      </form>
+    </div>
+  </body>
+  <script>
+    //    creating URL params function to find the car details
+
+    let carUrl = window.location.search;
+
+    let carParam = new URLSearchParams(carUrl);
+
+    let cardId = carParam.get("detail");
+    console.log(cardId);
+
+    let Cars_list = JSON.parse(localStorage.getItem("Cars_list"));
+    console.log(Cars_list);
+    // let currentDoctor = doctorData.find((id) => doctorData.id === doctorId);
+    let cardDetails = Cars_list.find((e) => e["car_id"] == cardId);
+    console.log(cardDetails);
+
+    let findIndex = Cars_list.indexOf(cardDetails);
+    console.log(findIndex);
+
+    // console.log(currentDoctor);
+    document.getElementById("ca_r").value = cardDetails.Image;
+    document.getElementById("ca_r1").value = cardDetails.Vehicle_no;
+    document.getElementById("ca_r2").value = cardDetails.Vehicle_model;
+    document.getElementById("ca_r3").value = cardDetails.Description;
+    let form = document.getElementById("cars_detail");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      let ca_r = document.getElementById("ca_r").value;
+      let ca_r1 = document.getElementById("ca_r1").value;
+      let ca_r2 = document.getElementById("ca_r2").value;
+      let ca_r3 = document.getElementById("ca_r3").value;
+
+      let editCarObject = {
+        Description: ca_r3,
+        Image: ca_r,
+        Vehicle_model: ca_r2,
+        Vehicle_no: ca_r1,
+      };
+
+      let carObjectAssaign = Object.assign(cardDetails, editCarObject);
+      console.log(carObjectAssaign);
+
+      Cars_list[findIndex] = carObjectAssaign;
+
+      localStorage.setItem("Cars_list", JSON.stringify(Cars_list));
+      alert("Are you want to save new changes");
+      window.location.href = "../pages/list_of_Cars.html";
+      //   window.location.href = "./Doctorslist.html";
+    });
+    let delete_car = document.getElementById("hello5");
+    delete_car.addEventListener("click", function (event) {
+      event.preventDefault();
+      let index = Cars_list.indexOf(cardDetails);
+      let msg = confirm("Are you sure you want to delete this Car details");
+      if (msg !== true) {
+        return;
+      } else {
+        Cars_list.splice(index, 1);
+        // console.log(details);
+        localStorage.setItem("Cars_list", JSON.stringify(Cars_list));
+        window.location.href = "../pages/list_of_Cars.html";
+      }
+    });
+  </script>
+</html>

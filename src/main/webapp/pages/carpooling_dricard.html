@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/carpoolingdriv.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <!-- <body>
+    <div class="card_1">
+      <div class="card">
+        <div>
+          <img
+            src="../assets/images/vijay.png"
+            class="viji"
+            alt="Driver Profile Picture"
+          />
+        </div>
+        <div class="ca_1">
+          <h2>John Doe</h2>
+          <br />
+          <p><b>Age</b>: 35</p>
+        </div>
+        <div class="ca_1">
+          <p><b>Car Model</b>: Toyota Corolla</p>
+          <br />
+          <p><b>License Plate</b>: XYZ 123</p>
+        </div>
+      </div>
+      <div class="sec_2">
+        <div class="ca_2">
+          <p><b>Departure Time</b>: 8:00 AM</p>
+          <br />
+          <p><b>Route</b>: San Francisco to Palo Alto</p>
+        </div>
+        <div><button class="ca_3">Contact Driver</button></div>
+      </div>
+    </div>
+  </body> -->
+
+  <script>
+    let areas = [
+      "adayar",
+      "perungudi",
+      "kandhachavdi",
+      "taramani",
+      "velachery",
+      "perungalathur",
+      "gudhuvancherry",
+      "ambathur",
+      "marinabeach",
+      "ramapuram",
+      "chengalpattu",
+      "maangadu",
+      "manali",
+      "tambaram",
+      "vadapalani",
+      "porur",
+      "karapakkam",
+      "navalur",
+      "thiruporur",
+    ];
+
+    let driver = JSON.parse(localStorage.getItem("new_Driver"));
+    // console.log(driver);
+    let pick_check = JSON.parse(localStorage.getItem("pickup"));
+    // console.log(pick_check);
+
+    // SELECT CAR DRIVER LIST
+    function carDriverList(ar) {
+      for (let i = 0; i < ar.length; i++) {
+        // Create the main div element with class name "card_1"
+        const cardDiv = document.createElement("div");
+        cardDiv.classList.add("card_1");
+
+        // Create the first div element with class name "card"
+        const driverInfoDiv = document.createElement("div");
+        driverInfoDiv.classList.add("card");
+
+        // Create the div element with image and class name "viji"
+        const driverImageDiv = document.createElement("div");
+        const driverImage = document.createElement("img");
+        driverImage.src = ar[i]["new_driver_Img"];
+        driverImage.classList.add("viji");
+        driverImage.alt = "Driver Profile Picture";
+
+        // Append the image element to the div element
+        driverImageDiv.append(driverImage);
+
+        // Create the div element with class name "ca_1"
+        const driverDetailsDiv1 = document.createElement("div");
+        driverDetailsDiv1.classList.add("ca_1");
+
+        // Create the heading element with text
+        const driverName = document.createElement("h2");
+        driverName.textContent = ar[i]["new_driver_name"];
+
+        // Create the paragraph element with bold text
+        const driverAge = document.createElement("p");
+        driverAge.innerHTML = "<b>Age</b>:" + ar[i]["new_driver_age"];
+
+        // Append the heading and paragraph elements to the first div element
+        driverDetailsDiv1.append(driverName);
+        driverDetailsDiv1.append(driverAge);
+
+        // Create the second div element with class name "ca_1"
+        const driverDetailsDiv2 = document.createElement("div");
+        driverDetailsDiv2.classList.add("ca_1");
+
+        // Create the paragraph elements with bold text
+        const carModel = document.createElement("p");
+        carModel.innerHTML = "<b>Car Model</b>:" + ar[i]["new_driver_car"];
+
+        const licensePlate = document.createElement("p");
+        licensePlate.innerHTML =
+          "<b>License Plate</b>:" + ar[i]["new_driver_numplate"];
+
+        // Append the paragraph elements to the second div element
+        driverDetailsDiv2.append(carModel);
+        driverDetailsDiv2.append(licensePlate);
+
+        // Append the div element with image, first div element, and second div element to the main div element
+        driverInfoDiv.append(driverImageDiv);
+        driverInfoDiv.append(driverDetailsDiv1);
+        driverInfoDiv.append(driverDetailsDiv2);
+
+        // Create the second div element with class name "sec_2"
+        const rideInfoDiv = document.createElement("div");
+        rideInfoDiv.classList.add("sec_2");
+
+        // Create the div element with class name "ca_2"
+        const rideDetailsDiv = document.createElement("div");
+        rideDetailsDiv.classList.add("ca_2");
+
+        // Create the paragraph elements with bold text
+        const departureTime = document.createElement("p");
+        departureTime.innerHTML =
+          "<b>Departure Time</b>: " + ar[i]["new_driver_Departure"];
+
+        const route = document.createElement("p");
+        route.innerHTML = "<b>Route</b>:" + ar[i]["new_driver_location"];
+
+        // Append the paragraph elements to the div element
+        rideDetailsDiv.append(departureTime);
+        rideDetailsDiv.append(route);
+
+        // // Create the <a> element
+        const link = document.createElement("a");
+        link.href = "../pages/otp.html";
+        rideInfoDiv.append(link);
+
+        // Create the button element with class name "ca_3" and text
+        const contactDriverBtn = document.createElement("button");
+        contactDriverBtn.classList.add("ca_3");
+        contactDriverBtn.textContent = "Contact Driver";
+
+        // Append the div element with paragraph elements and button element to the second div element
+        rideInfoDiv.append(rideDetailsDiv);
+        link.append(contactDriverBtn);
+
+        // Append the first div element and second div element to the main div element
+        cardDiv.append(driverInfoDiv);
+        cardDiv.append(rideInfoDiv);
+
+        // Append the main div element to the document body or any other parent element
+        document.body.append(cardDiv);
+      }
+    }
+    // calling back the function
+
+    const driver_pick_card = [];
+    function findLocation(place) {
+      const findPlace = driver.filter((h) => h.new_driver_location == place);
+      // console.log(findPlace);
+      return findPlace;
+    }
+    for (let i = 0; i < areas.length; i++) {
+      const element = areas[i].toLowerCase();
+      if (element == pick_check) {
+        let locations = findLocation(element);
+        for (let j = 0; j < locations.length; j++) {
+          driver_pick_card.push(locations[j]);
+          console.log(driver_pick_card);
+        }
+      }
+    }
+    if (driver_pick_card[0] === undefined) {
+      alert("There is no driver in your area");
+      window.location.href = "../pages/carpool.html";
+    } else {
+      carDriverList(driver_pick_card);
+    }
+  </script>
+</html>

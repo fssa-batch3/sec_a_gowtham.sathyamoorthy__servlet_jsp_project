@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sign</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@600;700&family=Chivo:ital,wght@0,600;1,600&family=Outfit:wght@500&family=Space+Mono:wght@700&display=swap");
+      body {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        background-image: url(../assets/images/bike\ background.jpg);
+        background-size: cover;
+        font-family: "Barlow", sans-serif;
+      }
+      .box {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 700px;
+        padding: 15px;
+        border: 2px solid rgb(230, 234, 233);
+        border-left: 3px solid rgb(230, 234, 233);
+        border-radius: 15px;
+        margin-left: 60px;
+        margin-top: 35%;
+        gap: 15px;
+        box-shadow: 20px 15px 35px 10px;
+      }
+      #id1 {
+        color: aquamarine;
+        border-bottom: 3px solid aquamarine;
+        border-right: 3px solid aquamarine;
+        width: 250px;
+        outline-style: none;
+      }
+      #id2 {
+        color: aquamarine;
+        border-bottom: 3px solid aquamarine;
+        border-right: 3px solid aquamarine;
+        outline-style: none;
+        width: 250px;
+      }
+      #id3 {
+        color: aquamarine;
+        border-bottom: 3px solid aquamarine;
+        border-right: 3px solid aquamarine;
+        outline-style: none;
+        width: 250px;
+      }
+      #id4 {
+        color: aquamarine;
+        border-bottom: 3px solid aquamarine;
+        border-right: 3px solid aquamarine;
+        outline-style: none;
+        width: 250px;
+      }
+      #id5 {
+        color: aquamarine;
+        border-bottom: 3px solid aquamarine;
+        border-right: 3px solid aquamarine;
+        outline-style: none;
+        width: 250px;
+      }
+      .name {
+        color: aquamarine;
+        font-size: 20px;
+        margin-top: -5%;
+
+        margin-left: 50px;
+        margin-bottom: 20px;
+      }
+      .mobile {
+        color: aquamarine;
+        font-size: 20px;
+        margin-left: 50px;
+        margin-bottom: 20px;
+      }
+      .otp {
+        color: aquamarine;
+        font-size: 20px;
+        margin-left: 50px;
+        margin-bottom: 05px;
+      }
+
+      .email {
+        color: aquamarine;
+        font-size: 20px;
+        margin-left: 50px;
+        margin-bottom: 20px;
+      }
+      h1 {
+        color: rgb(230, 234, 233);
+        margin-left: 115px;
+      }
+      ::placeholder {
+        color: aquamarine;
+      }
+      input {
+        margin: 5px 0px;
+        height: 30px;
+        padding: 7px;
+        background-color: transparent;
+        border-color: none;
+      }
+
+      button {
+        width: 350px;
+        height: 30px;
+        margin-left: 25px;
+        margin-top: 20px;
+        background-color: transparent;
+        color: aquamarine;
+        border: 2px solid aquamarine;
+        cursor: pointer;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      button:hover {
+        background-color: aquamarine;
+        color: black;
+        transition: 0.5s;
+      }
+      .sign a {
+        margin-left: 70px;
+        color: aquamarine;
+        font-weight: bold;
+      }
+      .sign {
+        margin-top: 1.3rem;
+      }
+      .log {
+        margin-left: 7rem;
+        font-size: 1rem;
+        font-weight: bolder;
+        width: 10rem;
+        height: 2rem;
+        cursor: pointer;
+        margin-top: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- this page refer to the sign-in -->
+    <div class="box">
+      <div class="logo">
+        <h1>Sign-up Here</h1>
+      </div>
+      <form id="sign_in information">
+        <div class="name">
+          <label>Full-name</label><br />
+          <input
+            type="Name"
+            title="Please enter your name "
+            id="id1"
+            placeholder="Name"
+            pattern="[A-Za-z]{1,15}$"
+            value="Settu"
+            required
+          />
+        </div>
+        <div class="email">
+          <label>Email-id</label><br />
+          <input
+            type="email"
+            id="id2"
+            placeholder="Email-id"
+            pattern=".+@gmail\.com"
+            value="settu@gmail.com"
+            required
+          />
+        </div>
+
+        <div class="mobile">
+          <label>Phone-Number</label><br />
+          <input
+            type="number"
+            pattern="[6-9]{1}[0-9]{9}"
+            maxlength="10"
+            id="id3"
+            placeholder="mobile"
+            value="6867666564"
+            required
+          />
+        </div>
+        <div class="otp">
+          <label>password</label><br />
+          <input
+            type="password"
+            title=""
+            id="id4"
+            title="Please ENter Your Password"
+            placeholder="password"
+            value="Settu123"
+            required
+          />
+        </div>
+        <div class="otp">
+          <label>confirm password</label><br />
+          <input
+            type="password"
+            title=""
+            id="id5"
+            title="Please ENter Your Password"
+            placeholder="confirm password"
+            value="Settu123"
+            required
+          />
+        </div>
+        <div class="main-page">
+          <!-- <a href="../index.html">
+            <button>Sign-up</button>
+          </a> -->
+          <button>Sign-up</button>
+        </div>
+        <div class="sign">
+          <a href="./dri_login.html">Already have an account ? Log in here </a>
+        </div>
+      </form>
+      <a href="../index.html"> <button class="log">back</button></a>
+    </div>
+
+    <script>
+      // assign the variable//
+      const signupform = document.getElementById("sign_in information");
+      signupform.addEventListener("submit", function (event) {
+        // array
+        let Drivers = [];
+        // function
+        if (localStorage.getItem("Drivers") != null) {
+          Drivers = JSON.parse(localStorage.getItem("Drivers"));
+        }
+        event.preventDefault();
+
+        const Driver_name = document.getElementById("id1").value;
+        const Driver_email = document.getElementById("id2").value;
+        const Driver_number = document.getElementById("id3").value;
+        const Driver_password = document.getElementById("id4").value;
+        const Driver_confrimpassword = document.getElementById("id5").value;
+        const Driver_id = Date.now();
+        let validation_error = false;
+        let Driver_data = {
+          Driver_name,
+          Driver_email,
+          Driver_number,
+          Driver_password,
+          Driver_confrimpassword,
+          Driver_id,
+        };
+        console.log(Driver_data);
+
+        if (Driver_password != Driver_confrimpassword) {
+          validation_error = true;
+          alert("Confrim password is in correct!");
+          return false;
+        }
+        const select_user = Drivers.find(function (Drivers) {
+          const cus_phone = Drivers["Driver_number"];
+          const cus_email = Drivers["Driver_email"];
+
+          if (Driver_number === cus_phone) {
+            validation_error = true;
+            alert("user already present please change Number");
+            return fasle;
+          }
+          return false;
+        });
+        if (!validation_error) {
+          Drivers.push(Driver_data);
+          localStorage.setItem("Drivers", JSON.stringify(Drivers));
+          localStorage.setItem("DriverEmail", JSON.stringify(Driver_email));
+          console.log(Drivers);
+          alert("Account Created Successfully");
+        }
+        window.location.href = "../pages/dri_login.html";
+      });
+    </script>
+  </body>
+</html>

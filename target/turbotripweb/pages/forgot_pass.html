@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Forget Password</title>
+
+    <link rel="stylesheet" href="../assets/css/movie.css" />
+  </head>
+  <body class="bg">
+    <div class="conForm">
+      <form id="form">
+        <br />
+        <div class="inputBox">
+          <input
+            id="email1"
+            type="email"
+            name=""
+            autocomplete="off"
+            required="true"
+          />
+          <span>Enter your Email-id</span>
+        </div>
+        <div class="inputBox">
+          <input
+            id="password"
+            type="password"
+            name=""
+            autocomplete="off"
+            required="true"
+          />
+          <span>Enter your New Password</span>
+        </div>
+        <div class="inputBox">
+          <input
+            id="c_password"
+            type="password"
+            name=""
+            autocomplete="off"
+            required="true"
+          />
+          <span>Confrim Password</span>
+        </div>
+        <button type="submit" onclick="conf()" class="btn5">Confirm</button>
+      </form>
+      <a href="./logIn.html">
+        <button class="btn8">Back</button>
+      </a>
+    </div>
+    <script>
+      function conf() {
+        let gmail = document.getElementById("email1").value;
+        let Password = document.getElementById("password").value;
+        let co_password = document.getElementById("c_password").value;
+
+        let user_details = JSON.parse(localStorage.getItem("users"));
+        console.log(user_details);
+        let get_obj = user_details.find(function (user_obj) {
+          if (gmail === user_obj["user_email"]) {
+            return true;
+          }
+          // if (password != c_password) {
+          //   validation_error = true;
+          //   alert("Confrim password is in correct!");
+          //   return false;
+          // }
+        });
+
+        console.log(get_obj);
+
+        get_obj["user_password"] = Password;
+        get_obj["user_confrimpassword"] = co_password;
+
+        localStorage.setItem("users", JSON.stringify(user_details));
+
+        alert("Successfully change your password");
+        location.href = "./logIn.html";
+      }
+    </script>
+  </body>
+</html>

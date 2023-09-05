@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@600;700&family=Chivo:ital,wght@0,600;1,600&family=Outfit:wght@500&family=Space+Mono:wght@700&display=swap");
+* {
+  font-family: "Barlow", sans-serif;
+}
+nav {
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  display: flex;
+  box-shadow: 0px 1px 20px rgb(45, 44, 44);
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-color: black;
+  z-index: 50;
+}
+/* #google_translate_element {
+  height: 20px;
+  width: 20px;
+} */
+.snip1143 {
+  font-family: "Raleway", Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.snip1143 * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1143 li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0 1.5em;
+  overflow: hidden;
+}
+.snip1143 a {
+  padding: 0.3em 0;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+  margin: 0;
+  text-decoration: none;
+}
+.snip1143 a:before,
+.snip1143 a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1143 a:before {
+  top: 100%;
+  display: block;
+  height: 3px;
+  width: 100%;
+  content: "";
+  background-color: #cfcccc;
+}
+.snip1143 a:after {
+  padding: 0.3em 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  content: attr(data-hover);
+  color: white;
+  white-space: nowrap;
+}
+.snip1143 li:hover a,
+.snip1143 .current a {
+  transform: translateY(-100%);
+}
+.navbar {
+  /* margin-right: 50px; */
+  padding-right: 40px;
+}
+.user_profile1 {
+  height: 50px;
+  width: 50px;
+  margin-right: 30px;
+}
+.logo img {
+  width: 83px;
+  height: 083px;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+
+.section {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 120px;
+}
+.contact {
+  margin-left: 10%;
+  font-size: 70px;
+  font-weight: bolder;
+  margin-top: 130px;
+}
+.information {
+  font-size: 20px;
+  margin-right: 150px;
+  margin-top: -130px;
+}
+.info {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.input-container {
+  position: relative;
+  margin: 50px auto;
+  width: 200px;
+}
+
+.input-container #phone,
+#sender_name,
+#email,
+#user_msg[type="text"] {
+  width: 350px;
+  height: 50px;
+  margin-bottom: 20px;
+  border: 2px solid white;
+  border-radius: 7px;
+  box-shadow: 1px 2px 2px 1px rgb(211, 209, 209);
+  outline: none;
+}
+#user_msg[type="text"] {
+  width: 350px;
+  height: 150px;
+}
+.input-container .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+  top: -35px;
+  font-size: 20px;
+  color: #0e0e0e;
+}
+
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.input-container1 {
+  position: relative;
+  margin: 50px auto;
+  width: 200px;
+}
+
+.input-container1 input[type="text"] {
+  width: 350px;
+  height: 100px;
+  margin-bottom: 20px;
+  border: 2px solid white;
+  border-radius: 7px;
+  box-shadow: 1px 2px 2px 1px rgb(211, 209, 209);
+  outline: none;
+}
+
+.input-container1 .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-container1 input[type="text"]:focus ~ .label,
+.input-container1 input[type="text"]:valid ~ .label {
+  top: -30px;
+  font-size: 20px;
+  color: #0e0e0e;
+}
+
+.input-container1 .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+::placeholder {
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+}
+#id5 {
+  width: 100px;
+  height: 50px;
+  border-radius: 7px;
+  margin-left: 150px;
+}
+h1 {
+  font-size: 45px;
+}
+.office {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: -20px;
+}
+h2 {
+  font-size: 35px;
+  font-weight: bolder;
+}
+.office-1 {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: -20px;
+}
+h3 {
+  font-size: 35px;
+  font-weight: bolder;
+}
+.office-2 {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: -25px;
+  color: blue;
+}
+.icon1 {
+  width: 50px;
+  height: 30px;
+  margin-left: 15px;
+}
+.subm {
+  color: white;
+  width: 12rem;
+  height: 3.2rem;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: black;
+  cursor: pointer;
+  transition: 0.5s;
+  border: none;
+  margin-left: 80px;
+  margin-top: 15px;
+}
+.subm:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.address p {
+  font-size: 20px;
+  color: gold;
+  margin-left: 03%;
+  margin-top: 20px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.icon {
+  margin-left: 4.5%;
+}
+.icon2 {
+  color: gold;
+  margin-top: -220px;
+  margin-left: 75px;
+  font-size: 25px;
+}
+.icon1 {
+  margin-top: 30px;
+  height: 50px;
+  margin-left: 20px;
+}
+.footer4 {
+  margin-left: 40%;
+  margin-top: -220px;
+  margin-right: 50px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: gold;
+}
+.footer5 {
+  margin-left: 05%;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: -220px;
+  color: gold;
+}
+.footer6 {
+  display: flex;
+}
+.footer8 {
+  color: rgb(237, 233, 233);
+  padding-left: 38%;
+  border-top: 1px solid rgb(229, 226, 226);
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+ul {
+  padding: 5px;
+  cursor: pointer;
+}
+footer {
+  background-color: black;
+}
+.footer {
+  display: flex;
+}
+.footer1 {
+  font-size: 30px;
+  margin-top: 40px;
+  font-weight: bolder;
+  font-style: italic;
+
+  margin-left: 20px;
+}
+.footer2 {
+  width: 150px;
+  margin-left: 25px;
+  margin-top: 70px;
+  color: red;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.footer7 {
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 70px;
+  margin-top: -20px;
+}
+.address {
+  font-size: 20px;
+  color: white;
+  margin-left: 03%;
+  margin-top: 20px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.t2 {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}

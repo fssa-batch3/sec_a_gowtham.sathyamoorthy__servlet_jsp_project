@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/contact us.css" />
+    <title>contact</title>
+  </head>
+  <body>
+    <div>
+      <nav id="js_header">
+        <!-- header part -->
+        <div class="logo">
+          <img src="../assets/images/Turbo trip.png" alt="logo" />
+        </div>
+        <ul class="snip1143">
+          <li class="current"><a href="#" data-hover="Home">Home</a></li>
+          <li>
+            <a href="../pages/About us.html" data-hover="About Us">About Us</a>
+          </li>
+          <li>
+            <a href="../pages/collapse.html" data-hover="Notification"
+              >Notification</a
+            >
+          </li>
+          <li>
+            <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
+          </li>
+        </ul>
+  
+        <div class="user_profile">
+          <a href="./profilepage-1.html">
+            <img
+              src="../assets/images/gpro.png"
+              alt="use_pro"
+              class="user_profile1"
+          /></a>
+        </div>
+      </nav>
+    </div>
+    <div class="contact">Get in touch with Us</div>
+    <div class="section">
+      <div class="sec">
+        <div>
+          <h1>Head Office - Chennai</h1>
+          <p class="office">
+            No,6 vivekanadar street <br />1st cross street near Global
+            infocity<br />
+            perungudi mainroad chennai-600096
+          </p>
+        </div>
+        <div class="section-1">
+          <h2>Call us at</h2>
+          <p class="office-1">01234567890</p>
+        </div>
+        <div class="section-2">
+          <h3>Mail Us at</h3>
+          <p class="office-2">Support@Turbotrip.in</p>
+        </div>
+      </div>
+      <div class="information">
+        <div class="info">Leave a message</div>
+        <div class="input-container">
+          <input type="text" id="sender_name" required="" />
+          <label for="input" class="label">Name</label>
+          <div class="underline"></div>
+        </div>
+        <div class="input-container">
+          <input type="text" id="phone" required="" />
+          <label for="input" class="label">phone </label>
+          <div class="underline"></div>
+        </div>
+        <div class="input-container">
+          <input type="text" id="email" required="" />
+          <label for="input" class="label">e-mail</label>
+          <div class="underline"></div>
+        </div>
+        <div class="input-container1">
+          <input type="text" id="user_msg" required="" />
+          <label for="input" class="label">Write a message</label>
+          <button class="subm" type="submit" id="submit">Submit</button>
+          <div class="underline"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer">
+        <img src="../assets/images/Turbo trip.png " alt="logo" class="t2" />
+        <div class="footer3">
+          <p class="footer2">Turbo-Trip</p>
+          <p class="footer7">Carpool . Bikepool . Taxi</p>
+        </div>
+      </div>
+
+      <div class="address">
+        <p>
+          Turbo Trip, Carpool,Taxi,Mini truck <br />are developed by Settu
+          info.Pvt.Ltd
+        </p>
+      </div>
+
+      <div class="footer6">
+        <div class="footer4">
+          <ul>
+            Offers
+          </ul>
+          <ul>
+            Book a cab
+          </ul>
+          <ul>
+            Rental
+          </ul>
+          <ul>
+            outstation
+          </ul>
+          <ul>
+            Corporate
+          </ul>
+        </div>
+
+        <div class="footer5">
+          <ul>
+            About us
+          </ul>
+          <ul>
+            Contact us
+          </ul>
+          <ul>
+            media
+          </ul>
+          <ul>
+            career
+          </ul>
+          <ul>
+            support
+          </ul>
+        </div>
+        <div class="icon">
+          <p class="icon2">Follow us :</p>
+          <img
+            src="../assets/images/facebook.png"
+            alt="facebook"
+            class="icon1"
+          />
+          <img
+            src="../assets/images/instagram.png"
+            alt="instagram"
+            class="icon1"
+          />
+          <img src="../assets/images/twitter.png" alt="twitter" class="icon1" />
+          <img
+            src="../assets/images/telegram.png"
+            alt="telegram"
+            class="icon1"
+          />
+          <img
+            src="../assets/images/whatsapp-111.png"
+            alt="whatsapp"
+            class="icon1"
+          />
+        </div>
+      </div>
+      <div class="footer8">
+        © 2022 Turbo Transportation. All rights reserved.
+      </div>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      emailjs.init("PATZbuWOrgn94p2I7");
+    </script>
+
+    <script>
+      let send_name = document.getElementById("sender_name");
+      let send_phone = document.getElementById("phone").value;
+      let send_email = document.getElementById("email");
+      let send_msg = document.getElementById("user_msg");
+
+      let contact = document.getElementById("submit");
+      console.log(contact);
+      contact.addEventListener("click", function (event) {
+        console.log(true);
+        let email = document.getElementById("email").value;
+        emailjs.send("service_2ji3hvq", "template_o2l7i4i", {
+          name: send_name.value,
+          from: send_email.value,
+          message: send_msg.value,
+        });
+        console.log(true);
+        window.location.reload();
+        return alert("send the mail to the Turbo trip");
+      });
+    </script>
+  </body>
+
+</html>

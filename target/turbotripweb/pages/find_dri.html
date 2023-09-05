@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/find_dri.css" />
+    <link rel="stylesheet" href="../assets/css/collapse.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <style></style>
+  </head>
+  <body>
+    <nav id="js_header">
+      <!-- header part -->
+      <div class="logo">
+        <img src="../assets/images/Turbo trip.png" alt="logo" />
+      </div>
+      <ul class="snip1143">
+        <li class="current"><a href="#" data-hover="Home">Home</a></li>
+        <li>
+          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
+        </li>
+        <li>
+          <a href="../pages/collapse.html" data-hover="Notification"
+            >Notification</a
+          >
+        </li>
+        <li>
+          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
+        </li>
+      </ul>
+
+      <div class="user_profile">
+        <a href="./profilepage-1.html">
+          <img
+            src="../assets/images/gpro.png"
+            alt="use_pro"
+            class="user_profile1"
+        /></a>
+      </div>
+    </nav>
+    <section class="find-section" style="display: none">
+      <div class="find">
+        <h1 class="loc_1">Request sent to the <br />near by Driver !!!</h1>
+        <div class="loc_2">
+          <img src="../assets/search-unscreen.gif" class="location" alt="loc" />
+          <h2 class="loc_3">Finding driver</h2>
+        </div>
+        <button class="can_1">Cancel</button>
+      </div>
+    </section>
+    <div style="display: none" id="otp"></div>
+    <script src="../assets/js/otpconfrim.js"></script>
+
+    <script>
+      let user = localStorage.getItem("profile");
+      let bookings = JSON.parse(localStorage.getItem("bookings"));
+      let current = bookings.filter((e) => {
+        if (e["customerId"] == user) {
+          return true;
+        }
+      });
+      let obj = bookings[bookings.length - 1];
+      if (obj["bookingAccepted"] == true) {
+        let sec = document.querySelector("section");
+        sec.style.display = "none";
+        let otp = document.querySelector("#otp");
+        otp.style.display = "flex";
+      } else {
+        let sec = document.querySelector("section");
+        sec.style.display = "flex";
+      }
+      let find = document.querySelector(".find");
+      setTimeout(() => {
+        find.remove();
+        otp();
+      }, 20000);
+    </script>
+  </body>
+</html>

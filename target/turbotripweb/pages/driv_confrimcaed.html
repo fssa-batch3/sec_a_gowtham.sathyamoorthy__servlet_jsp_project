@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      font-family: "Roboto", sans-serif;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    nav {
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      display: flex;
+      box-shadow: 0px 1px 20px rgb(45, 44, 44);
+      position: fixed;
+      right: 0;
+      left: 0;
+      top: 0;
+      background-color: black;
+      z-index: 50;
+    }
+    /* #google_translate_element {
+  height: 20px;
+  width: 20px;
+} */
+    .snip1143 {
+      font-family: "Raleway", Arial, sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+    .snip1143 * {
+      box-sizing: border-box;
+      -webkit-transition: all 0.35s ease;
+      transition: all 0.35s ease;
+    }
+    .snip1143 li {
+      display: inline-block;
+      list-style: outside none none;
+      margin: 0 1.5em;
+      overflow: hidden;
+    }
+    .snip1143 a {
+      padding: 0.3em 0;
+      color: rgba(255, 255, 255, 0.5);
+      position: relative;
+      display: inline-block;
+      letter-spacing: 1px;
+      margin: 0;
+      text-decoration: none;
+    }
+    .snip1143 a:before,
+    .snip1143 a:after {
+      position: absolute;
+      -webkit-transition: all 0.35s ease;
+      transition: all 0.35s ease;
+    }
+    .snip1143 a:before {
+      top: 100%;
+      display: block;
+      height: 3px;
+      width: 100%;
+      content: "";
+      background-color: #cfcccc;
+    }
+    .snip1143 a:after {
+      padding: 0.3em 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      content: attr(data-hover);
+      color: white;
+      white-space: nowrap;
+    }
+    .snip1143 li:hover a {
+      transform: translateY(-100%);
+    }
+    .navbar {
+      /* margin-right: 50px; */
+      padding-right: 40px;
+    }
+    .user_profile1 {
+      height: 50px;
+      width: 50px;
+      margin-right: 30px;
+    }
+    .logo img {
+      width: 83px;
+      height: 083px;
+      border-radius: 50px;
+      margin-left: 10px;
+    }
+
+    .con_card {
+      border: 2px solid black;
+      width: 350px;
+      height: 450px;
+      background-color: black;
+      margin-left: 600px;
+      margin-top: 200px;
+      font-family: "Roboto", sans-serif;
+      border-radius: 10%;
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+    }
+    #con_cd2 {
+      color: white;
+      font-family: "Roboto", sans-serif;
+      margin-left: 20px;
+      font-size: 20px;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+    #con_cd3 {
+      color: white;
+      font-family: "Roboto", sans-serif;
+      margin-left: 20px;
+      font-size: 20px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    #con_cd4 {
+      color: white;
+      font-family: "Roboto", sans-serif;
+      margin-left: 20px;
+      font-size: 20px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    #con_cd5 {
+      color: white;
+      font-family: "Roboto", sans-serif;
+      margin-left: 20px;
+      font-size: 20px;
+      margin-top: 10px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    #otp_ver {
+      height: 2.5rem;
+      width: 18rem;
+      outline: none;
+      font-family: "Roboto", sans-serif;
+      margin-bottom: 5px;
+      border-radius: 20px;
+      margin-left: 15px;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 20px;
+    }
+    .con_cd7 {
+      height: 2.5rem;
+      width: 18rem;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: green;
+      color: aliceblue;
+      font-family: "Roboto", sans-serif;
+      margin-bottom: 5px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.5s;
+      margin-left: 18px;
+    }
+    .con_cd7:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
+    .con_cd8 {
+      height: 2.6rem;
+
+      font-size: 20px;
+      font-weight: bold;
+      background-color: red;
+      color: aliceblue;
+      font-family: "Roboto", sans-serif;
+      border-radius: 20px;
+      cursor: pointer;
+      width: 18rem;
+      transition: 0.5s;
+      margin-left: 18px;
+    }
+    .con_cd8:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
+    .con_cd6 {
+      margin-left: 10px;
+    }
+    .concard {
+      margin-top: 20px;
+    }
+    .concrd1 {
+      width: 150px;
+      height: 2.5rem;
+      margin-left: 20px;
+      font-size: 17px;
+      font-weight: bold;
+      border-radius: 10px;
+      font-family: "Roboto", sans-serif;
+      background-color: rgb(12, 255, 255);
+      border: none;
+    }
+    .concrd2 {
+      width: 150px;
+      height: 2.5rem;
+      margin-left: 10px;
+      font-size: 17px;
+      font-weight: bold;
+      font-family: "Roboto", sans-serif;
+      border-radius: 10px;
+      border: none;
+    }
+  </style>
+  <body>
+    <nav id="js_header">
+      <!-- header part -->
+      <div class="logo">
+        <img src="../assets/images/Turbo trip.png" alt="logo" />
+      </div>
+      <ul class="snip1143">
+        <li class="current"><a href="#" data-hover="Home">Home</a></li>
+        <li>
+          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
+        </li>
+        <li>
+          <a href="../pages/dri_notify.html" data-hover="Notification"
+            >Notification</a
+          >
+        </li>
+        <li>
+          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
+        </li>
+      </ul>
+
+      <div class="user_profile">
+        <a href="./profilepage-1.html">
+          <img
+            src="../assets/images/gpro.png"
+            alt="use_pro"
+            class="user_profile1"
+        /></a>
+      </div>
+    </nav>
+    <!-- <div class="con_card">
+      <div class="con_cd1">
+        <p id="con_cd2"></p>
+        <p id="con_cd3"></p>
+        <p id="con_cd4"></p>
+        <p id="con_cd5"></p>
+      </div>
+      <div class="con_cd6">
+        <input type="tel" pattern="[6-9]{1}[0-9]{9}" />
+        <button class="con_cd7">Submit otp</button>
+        <button class="con_cd8">Cancel</button>
+      </div>
+      <div class="concard">
+        <button class="concrd1">Call</button>
+        <button class="concrd2">Direction</button>
+      </div>
+    </div> -->
+  </body>
+  <script>
+    let userId = localStorage.getItem("user_id");
+    console.log(userId);
+    let books = JSON.parse(localStorage.getItem("bookings"));
+
+    let params = window.location.search;
+    console.log(params);
+    let parameter = new URLSearchParams(params);
+    let paraName = parameter.get("id");
+
+    let confirmation = books.find((user) => {
+      let title = user["bookind_id"];
+      console.log(title);
+      if (paraName == title) {
+        console.log(paraName);
+        return true;
+      }
+    });
+
+    console.log(confirmation);
+    // Create the parent div element with class "con_card"
+    let conCardDiv = document.createElement("form");
+    conCardDiv.className = "con_card";
+
+    // Create the first inner div element with class "con_cd1"
+    let conCd1Div = document.createElement("div");
+    conCd1Div.className = "con_cd1";
+
+    // Create four p elements with ids "con_cd2", "con_cd3", "con_cd4", and "con_cd5"
+    let p2 = document.createElement("p");
+    p2.textContent = "From : " + confirmation["user_pickup"];
+    p2.id = "con_cd2";
+
+    let p3 = document.createElement("p");
+    p3.textContent = "to : " + confirmation["user_drop"];
+    p3.id = "con_cd3";
+
+    let p4 = document.createElement("p");
+    p4.textContent = "Date and time : " + confirmation["user_time"];
+    p4.id = "con_cd4";
+
+    let p5 = document.createElement("p");
+    p5.textContent = "no.of.seat : " + confirmation["user_seat"];
+    p5.id = "con_cd5";
+
+    // Append the p elements to the conCd1Div
+    conCd1Div.append(p2);
+    conCd1Div.append(p3);
+    conCd1Div.append(p4);
+    conCd1Div.append(p5);
+
+    // Create the second inner div element with class "con_cd6"
+    let conCd6Div = document.createElement("div");
+    conCd6Div.className = "con_cd6";
+
+    // Create an input element of type "tel" with the pattern attribute
+    let inputTel = document.createElement("input");
+    inputTel.type = "text";
+    inputTel.setAttribute("id", "otp_ver");
+    inputTel.maxLength = "4";
+
+    inputTel.pattern = "[0-9]{4}";
+
+    // Create the button elements with class "con_cd7" and "con_cd8"
+    let buttonSubmit = document.createElement("button");
+    buttonSubmit.className = "con_cd7";
+    buttonSubmit.textContent = "Submit otp";
+
+    let buttonCancel = document.createElement("button");
+    buttonCancel.className = "con_cd8";
+    buttonCancel.textContent = "Cancel";
+
+    // Append the input and button elements to the conCd6Div
+    conCd6Div.append(inputTel);
+    conCd6Div.append(buttonSubmit);
+    conCd6Div.append(buttonCancel);
+
+    // Create the third inner div element with class "concard"
+    let concardDiv = document.createElement("div");
+    concardDiv.className = "concard";
+
+    // Create the button elements with class "concrd1" and "concrd2"
+    let buttonCall = document.createElement("button");
+    buttonCall.className = "concrd1";
+    buttonCall.textContent = "Call";
+
+    let buttonDirection = document.createElement("button");
+    buttonDirection.className = "concrd2";
+    buttonDirection.textContent = "Direction";
+
+    // Append the button elements to the concardDiv
+    concardDiv.append(buttonCall);
+    concardDiv.append(buttonDirection);
+
+    // Append all the created elements to the conCardDiv
+    conCardDiv.append(conCd1Div);
+    conCardDiv.append(conCd6Div);
+    conCardDiv.append(concardDiv);
+
+    // Append the conCardDiv to the document body
+    document.body.append(conCardDiv);
+    conCardDiv.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let verify = document.getElementById("otp_ver").value;
+
+      let otpVerify = inputTel.value;
+      if (otpVerify == confirmation["OTP"]) {
+        alert("OTP matched customer verified ");
+        window.location.href = "./confrim.html";
+      } else {
+        alert("otp not matched please rewrite it ");
+      }
+      console.log(confirmation);
+      console.log(otpVerify);
+    });
+  </script>
+</html>

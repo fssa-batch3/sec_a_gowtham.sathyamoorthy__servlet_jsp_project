@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/carpool.css" />
+    <title>carpool</title>
+  </head>
+  <body>
+    <nav id="js_header">
+      <!-- header part -->
+      <div class="logo">
+        <img src="../assets/images/Turbo trip.png" alt="logo" />
+      </div>
+      <ul class="snip1143">
+        <li class="current"><a href="#" data-hover="Home">Home</a></li>
+        <li>
+          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
+        </li>
+        <li>
+          <a href="../pages/collapse.html" data-hover="Notification"
+            >Notification</a
+          >
+        </li>
+        <li>
+          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
+        </li>
+      </ul>
+
+      <div class="user_profile">
+        <a href="./profilepage-1.html">
+          <img
+            src="../assets/images/gpro.png"
+            alt="use_pro"
+            class="user_profile1"
+        /></a>
+      </div>
+    </nav>
+    <div class="back">
+      <div>
+        <a href="./homepage.html"><button class="container">Back</button></a>
+      </div>
+      <!-- this part is embeded by google maps -->
+      <div class="first">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15551.75866629963!2d80.24239903251019!3d12.975710753649992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d6d804e0793%3A0xf310a6ebd244b2d0!2sGlobal%20Infocity%20Park%2C%20Ambedkar%20Nagar%2C%20Perungudi%2C%20Chennai%2C%20Tamil%20Nadu%20600096!5e0!3m2!1sen!2sin!4v1670767794796!5m2!1sen!2sin"
+          width="500"
+          height="500"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          >Choose your place</iframe
+        >
+        <!-- section-1 -->
+        <div>
+          <h1>Turbo-Trip is India's largest <br />Carpooling network</h1>
+          <h2>
+            Download Turbo-Trip App to manage your ride with better experience
+          </h2>
+        </div>
+      </div>
+      <!-- this section is booking a taxi  -->
+      <div class="honda">
+        <!-- <div class="btn">
+          <button class="btn1">find ride</button>
+          <button class="btn2">offer ride</button>
+        </div> -->
+        <form id="get_address_information">
+          <div>
+            <img
+              src="../assets/images/hd-green-dot-circle-icon-11642066802ysgbn4cpvp-removebg-preview.png"
+              alt="green dot"
+              class="green"
+            />
+
+            <label for="enter address" class="label"></label>
+            <input
+              class="pickup"
+              placeholder="Enter pickup address"
+              id="pickup"
+              type="text"
+              required
+            /><br />
+          </div>
+
+          <div>
+            <img
+              src="../assets/images/r_circle-removebg-preview.png"
+              alt="red dot"
+              class="red"
+            />
+            <label for="drop address" class="label"></label>
+            <input
+              class="drop"
+              placeholder="Enter drop address"
+              id="drop"
+              type="text"
+              required
+            /><br />
+          </div>
+          <div>
+            <img
+              src="../assets/images/clock-removebg-preview.png"
+              alt="clock"
+              class="clock"
+            />
+            <label for="date"></label>
+            <input
+              type="date"
+              id="date"
+              onchange="checkDate()"
+              placeholder="Select pickup date"
+              name="select pickup time"
+            />
+            <label for="time"></label>
+            <input
+              type="time"
+              id="time"
+              min=""
+              placeholder="Select pickup time"
+              name="select pickup time"
+            />
+          </div>
+          <div class="seated">
+            <img src="../assets/images/ic_seat.png" alt="seat" class="seat" />
+            <select class="value" id="seatting">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div>
+            <a
+              ><button class="find" type="submit" id="find">
+                Find ride
+              </button></a
+            >
+          </div>
+        </form>
+        <div>
+          <a href="../index.html"><button class="car">Carpool</button></a>
+          <a href="../"><button class="taxi">Taxi</button></a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer">
+        <img src="../assets/images/Turbo trip.png " alt="logo" class="t2" />
+        <div class="footer3">
+          <p class="footer2">Turbo-Trip</p>
+          <p class="footer7">Carpool . Bikepool . Taxi</p>
+        </div>
+      </div>
+
+      <div class="address">
+        <p>
+          Turbo Trip, Carpool,Taxi,Mini truck <br />are developed by Settu
+          info.Pvt.Ltd
+        </p>
+      </div>
+
+      <div class="footer6">
+        <div class="footer4">
+          <ul>
+            Offers
+          </ul>
+          <ul>
+            Book a cab
+          </ul>
+          <ul>
+            Rental
+          </ul>
+          <ul>
+            outstation
+          </ul>
+          <ul>
+            Corporate
+          </ul>
+        </div>
+
+        <div class="footer5">
+          <ul>
+            About us
+          </ul>
+          <ul>
+            Contact us
+          </ul>
+          <ul>
+            media
+          </ul>
+          <ul>
+            career
+          </ul>
+          <ul>
+            support
+          </ul>
+        </div>
+        <div class="icon">
+          <p class="icon2">Follow us :</p>
+          <img
+            src="../assets/images/facebook.png"
+            alt="facebook"
+            class="icon1"
+          />
+          <img
+            src="../assets/images/instagram.png"
+            alt="instagram"
+            class="icon1"
+          />
+          <img src="../assets/images/twitter.png" alt="twitter" class="icon1" />
+          <img
+            src="../assets/images/telegram.png"
+            alt="telegram"
+            class="icon1"
+          />
+          <img
+            src="../assets/images/whatsapp-111.png"
+            alt="linkedin"
+            class="icon1"
+          />
+        </div>
+      </div>
+      <div class="footer8">
+        © 2022 Turbo Transportation. All rights reserved.
+      </div>
+    </footer>
+  </body>
+  <!-- <script>
+    // assign the variable//
+
+    let b_time = document.getElementById("time");
+    const get_address = document.getElementById("find");
+    get_address.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      let pickup_point = document
+        .getElementById("pickup")
+        .value.trim()
+        .toLowerCase();
+      let booked_time = document.getElementById("time").value;
+      localStorage.setItem("pickup", JSON.stringify(pickup_point));
+      localStorage.setItem("time", JSON.stringify(booked_time));
+      // window.location.href = "../pages/carpooling_dricard.html";
+    });
+    let carpool = [];
+
+    // function
+    if (localStorage.getItem("carpool") != null) {
+      carpool = JSON.parse(localStorage.getItem("carpool"));
+    }
+    event.preventDefault();
+    const user_pickup = document.getElementById("pickup").value;
+    const user_drop = document.getElementById("drop").value;
+    const user_time = document.getElementById("time").value;
+    const user_seat = document.getElementById("seatting").value;
+    const bookind_id = Date.now();
+
+    let book_details = {
+      user_pickup,
+      user_drop,
+      user_time,
+      user_seat,
+      bookind_id,
+    };
+    console.log(book_details);
+  </script> -->
+  <script>
+    function checkDate() {
+      let selectedText = document.getElementById("date").value;
+      let selectedDate = new Date(selectedText);
+      let now = new Date();
+      if (selectedDate < now) {
+        alert("Date must be in the future");
+      }
+    }
+
+    const timeInput = document.getElementById("time");
+    // Add event listener to the time input
+    timeInput.addEventListener("input", function () {
+      const selectedTime = this.value;
+      const currentTime = new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+      // Compare selected time with current time
+      if (selectedTime < currentTime) {
+        alert("You cannot select a past time.");
+        this.value = ""; // Clear the input value
+      }
+    });
+  </script>
+  <script>
+    let userEmail = JSON.parse(localStorage.getItem("userEmail"));
+    const users = JSON.parse(localStorage.getItem("users"));
+    const loggedUser = users.find((e) => {
+      if (userEmail == e["user_email"]) {
+        return true;
+      }
+    });
+    console.log(loggedUser);
+    user = localStorage.getItem("profile");
+    const addressForm = document.getElementById("get_address_information");
+    addressForm.addEventListener("submit", (e) => {
+      event.preventDefault();
+      let carpool = [];
+
+      let Drivers = JSON.parse(localStorage.getItem("Drivers"));
+      let DriverEmail = JSON.parse(localStorage.getItem("DriverEmail"));
+
+      let dri_details = Drivers.find(
+        (element) => element.Driver_email === DriverEmail
+      );
+      console.log(dri_details);
+
+      let users = JSON.parse(localStorage.getItem("users"));
+      let userEmail = JSON.parse(localStorage.getItem("userEmail"));
+
+      let user_details = users.find(
+        (element) => element.user_email === userEmail
+      );
+      console.log(user_details);
+      // function
+      if (localStorage.getItem("carpool") != null) {
+        carpool = JSON.parse(localStorage.getItem("carpool"));
+      }
+      event.preventDefault();
+      const user_pickup = document.getElementById("pickup").value;
+      const user_drop = document.getElementById("drop").value;
+      const user_date = document.getElementById("date").value;
+      const user_time = document.getElementById("time").value;
+      const user_seat = document.getElementById("seatting").value;
+      const bookind_id = Date.now();
+      const customerId = user;
+      const driver_id = dri_details.Driver_id;
+      const user_id = user_details.user_id;
+
+      let book_details = {
+        user_pickup,
+        user_drop,
+        user_date,
+        user_time,
+        user_seat,
+        bookind_id,
+        customerId,
+        raisedStatus: true,
+        bookingAccepted: false,
+        isread: false,
+        driver_id,
+        user_id,
+      };
+      let bookings = [];
+      if (JSON.parse(localStorage.getItem("bookings")) != null) {
+        bookings = JSON.parse(localStorage.getItem("bookings"));
+      }
+      bookings.push(book_details);
+      localStorage.setItem("bookings", JSON.stringify(bookings));
+      alert("Are you want to book a car");
+      window.location.href = "../pages/find_dri.html";
+    });
+  </script>
+</html>

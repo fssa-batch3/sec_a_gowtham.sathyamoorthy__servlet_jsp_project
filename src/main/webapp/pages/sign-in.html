@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sign</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@600;700&family=Chivo:ital,wght@0,600;1,600&family=Outfit:wght@500&family=Space+Mono:wght@700&display=swap");
+
+      body {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        background-image: url(../assets/images/bike\ background.jpg);
+        background-size: cover;
+        font-family: "Roboto", sans-serif;
+      }
+      .box {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 700px;
+        padding: 15px;
+        border: 2px solid aquamarine;
+        border-left: 3px solid aquamarine;
+        border-radius: 15px;
+        margin-left: 60px;
+        margin-top: 35%;
+        gap: 15px;
+        box-shadow: 20px 15px 35px 10px;
+        transition: 0.5s;
+      }
+      /* .box:hover {
+        transform: translateZ(10px) rotateX(80deg) rotateY(20deg);
+        transition: 0.5s;
+      } */
+      #id1 {
+        color: aquamarine;
+        border-bottom: 3px solid aquamarine;
+        border-right: 3px solid aquamarine;
+        width: 250px;
+        outline-style: none;
+      }
+      #id2 {
+        color: aquamarine;
+        border-bottom: 3px solid aquamarine;
+        border-right: 3px solid aquamarine;
+        width: 250px;
+        outline-style: none;
+      }
+      #id3 {
+        color: aquamarine;
+        border-bottom: 3px solid aquamarine;
+        border-right: 3px solid aquamarine;
+        outline-style: none;
+        width: 250px;
+      }
+      #id4 {
+        color: aquamarine;
+        border-bottom: 3px solid aquamarine;
+        border-right: 3px solid aquamarine;
+        outline-style: none;
+        width: 250px;
+      }
+      #id5 {
+        color: aquamarine;
+        border-bottom: 3px solid aquamarine;
+        border-right: 3px solid aquamarine;
+        outline-style: none;
+        width: 250px;
+      }
+      .name {
+        color: aquamarine;
+        font-size: 20px;
+
+        margin-left: 50px;
+        margin-bottom: 13px;
+      }
+      .mobile {
+        color: aquamarine;
+        font-size: 20px;
+        margin-left: 50px;
+        margin-bottom: 13px;
+      }
+      .otp {
+        color: aquamarine;
+        font-size: 20px;
+        margin-left: 50px;
+        margin-bottom: 05px;
+      }
+
+      .email {
+        color: aquamarine;
+        font-size: 20px;
+        margin-left: 50px;
+        margin-bottom: 13px;
+      }
+      h1 {
+        color: aquamarine;
+        margin-left: 115px;
+      }
+      ::placeholder {
+        color: aquamarine;
+      }
+      input {
+        margin: 5px 0px;
+        height: 30px;
+        padding: 7px;
+        background-color: transparent;
+        border-color: none;
+      }
+
+      button {
+        width: 350px;
+        height: 30px;
+        margin-left: 25px;
+        margin-top: 15px;
+        background-color: transparent;
+        color: aquamarine;
+        border: 2px solid aquamarine;
+        cursor: pointer;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      button:hover {
+        background-color: aquamarine;
+        color: black;
+        transition: 0.5s;
+      }
+      .sign a {
+        margin-left: 70px;
+        color: aquamarine;
+        font-weight: bold;
+      }
+      .sign {
+        margin-top: 1.3rem;
+      }
+      .log {
+        margin-left: 7rem;
+        font-size: 1rem;
+        font-weight: bolder;
+        width: 10rem;
+        height: 2rem;
+        cursor: pointer;
+        margin-top: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- this page refer to the sign-in -->
+    <div class="box">
+      <div class="logo">
+        <h1>Sign-Up Here</h1>
+      </div>
+      <form method="post" action="" id="sign_in information">
+        <div class="name">
+          <label>Full-name</label><br />
+          <input
+            type="Name"
+            title="Please enter your name "
+            pattern="[A-Za-z]{1,15}$"
+            id="id1"
+            placeholder="Name"
+            value="Utchikanna"
+            required
+          />
+        </div>
+        <div class="email">
+          <label>Email-id</label><br />
+          <input
+            type="email"
+            id="id2"
+            placeholder="Email-id"
+            required
+            pattern=".+@gmail\.com"
+            value="uthchikanna123@gmail.com"
+          />
+        </div>
+
+        <div class="mobile">
+          <label>Phone-Number</label><br />
+          <input
+            type="tel"
+            pattern="[6-9]{1}[0-9]{9}"
+            maxlength="10"
+            id="id3"
+            placeholder="mobile"
+            value="9098979695"
+            required
+          />
+        </div>
+        <div class="otp">
+          <label>password</label><br />
+          <input
+            type="password"
+            title=""
+            id="id4"
+            title="Please ENter Your Password"
+            placeholder="password"
+            required
+            value="Rolex123"
+            pattern="[a-zA-Z0-9]{8,15}$"
+          />
+        </div>
+        <div class="otp">
+          <label>confirm password</label><br />
+          <input
+            type="password"
+            title=""
+            id="id5"
+            title="Please ENter Your Password"
+            placeholder="confirm password"
+            value="Rolex123"
+            required
+            pattern="[a-zA-Z0-9]{8,15}$"
+          />
+        </div>
+
+        <div class="main-page">
+          <!-- <a href="../index.html">
+            <button>Sign-up</button>
+          </a> -->
+          <button>Sign-in</button>
+        </div>
+        <div class="sign">
+          <a href="./login.html">Already have an account ? Log in here </a>
+        </div>
+      </form>
+      <a href="../index.html"> <button class="log">back</button></a>
+    </div>
+
+    <script>
+      // assign the variable//
+      const signupform = document.getElementById("sign_in information");
+      signupform.addEventListener("submit", function (event) {
+        // array
+        let users = [];
+        // function
+        if (localStorage.getItem("users") != null) {
+          users = JSON.parse(localStorage.getItem("users"));
+        }
+        event.preventDefault();
+
+        const user_name = document.getElementById("id1").value;
+        const user_email = document.getElementById("id2").value;
+        const user_number = document.getElementById("id3").value;
+        const user_password = document.getElementById("id4").value;
+        const user_confrimpassword = document.getElementById("id5").value;
+        const user_id = Date.now();
+        let validation_error = false;
+        let user_data = {
+          user_name,
+          user_email,
+          user_number,
+          user_password,
+          user_confrimpassword,
+          user_id,
+          check: "user",
+        };
+        console.log(user_data);
+
+        if (user_password != user_confrimpassword) {
+          validation_error = true;
+          alert("Confrim password is in correct!");
+          return false;
+        }
+
+        const select_user = users.find(function (users) {
+          const cus_phone = users["user_number"];
+          const cus_email = users["user_email"];
+
+          if (user_number === cus_phone) {
+            validation_error = true;
+            alert("user already present please change Number");
+            return fasle;
+          }
+          return false;
+        });
+        if (!validation_error && user_number.length < 11) {
+          users.push(user_data);
+          localStorage.setItem("users", JSON.stringify(users));
+          localStorage.setItem("user_id", user_id);
+          localStorage.setItem("userEmail", JSON.stringify(user_email));
+          console.log(users);
+          alert("Account Created Successfully");
+          window.location.href = "../pages/login.html?user=" + user_id;
+        } else {
+          alert("mobile number should contain less than 10 numbers");
+        }
+      });
+      //   let get_data = JSON.parse(localStorage.getItem("users"));
+      //   console.log(get_data);
+    </script>
+
+    <!-- firebase script file -->
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        onValue,
+        set,
+        push,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCP2gOCZ_JBy6gegQeh7RrCjd1MfpxYD9Y",
+        authDomain: "turbo-trip-fae40.firebaseapp.com",
+        projectId: "turbo-trip-fae40",
+        storageBucket: "turbo-trip-fae40.appspot.com",
+        messagingSenderId: "906432508569",
+        appId: "1:906432508569:web:3e8b5fd065e78bfdbf3e08",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      let database = getDatabase();
+
+      console.log(database);
+
+      const starCountRef = ref(database, "posts/");
+      onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>

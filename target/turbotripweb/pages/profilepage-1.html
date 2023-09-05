@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/profilepage.css" />
+    <!-- <link rel="stylesheet" href="../assets/css/style.css" /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <nav id="js_header">
+      <div class="logo">
+        <img src="../assets/images/Turbo trip.png" alt="logo" />
+      </div>
+      <ul class="snip1143">
+        <li class="current">
+          <a href="../pages/homepage.html" data-hover="Home">Home</a>
+        </li>
+        <li class="abt">
+          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
+        </li>
+        <li>
+          <a href="../pages/collapse.html" data-hover="Notification"
+            >Notification</a
+          >
+        </li>
+        <li>
+          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
+        </li>
+      </ul>
+      <div class="user_profile">
+        <a href="../pages/dri_profile.html">
+          <img
+            src="../assets/images/gpro.png"
+            alt="use_pro"
+            class="user_profile1"
+        /></a>
+      </div>
+    </nav>
+    <div class="card">
+      <div class="card-header">
+        <div class="text-header">User-Profile</div>
+      </div>
+      <div class="card-body">
+        <form id="profile">
+          <div class="deatail-1">
+            <div class="form-group">
+              <label class="username">First Name</label>
+              <input
+                required=""
+                class="form-control"
+                name="username"
+                id="username"
+                type="text"
+              />
+            </div>
+            <div class="form-group">
+              <label class="email">Last Name</label>
+              <input
+                required=""
+                class="form-control"
+                name="Last name"
+                id="l_name"
+                type="text"
+                placeholder="Enter Last name"
+              />
+            </div>
+            <div class="form-group">
+              <label class="password">Email</label>
+              <input
+                required=""
+                class="form-control"
+                name="email"
+                id="email"
+                type="email"
+              />
+            </div>
+            <div class="form-group">
+              <label class="mobile">Mobile Number</label>
+              <input
+                required=""
+                class="form-control"
+                name="PH_number"
+                id="number"
+                type="number"
+              />
+            </div>
+            <div class="form-group-1">
+              <label class="add">User-profile</label>
+              <input
+                required=""
+                class="form-control"
+                name="userad"
+                id="user_pic"
+                type="url"
+                placeholder="Enter your image url"
+              />
+            </div>
+          </div>
+          <div class="details">
+            <div class="form-group">
+              <label class="blood">Blood group</label>
+
+              <select id="blood_grp">
+                <option value="A+ve">A+ve</option>
+                <option value="B+ve">B+ve</option>
+                <option value="O+ve">O+ve</option>
+                <option value="A-ve">A-ve</option>
+                <option value="B-ve">B-ve</option>
+                <option value="O-ve">O-ve</option>
+                <option value="AB+ve">AB+ve</option>
+                <option value="AB-ve<">AB-ve</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="gender">Gender</label>
+
+              <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="state">Choose State</label>
+
+              <select id="states">
+                <option value="tamil-nadu">Tamil-nadu</option>
+                <option value="andra">Andrapradesh</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="kerala">Kerala</option>
+                <option value="delhi">Delhi</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="Country"> Choose Country</label>
+
+              <select id="country">
+                <option value="india">India</option>
+                <option value="china">China</option>
+                <option value="japan">Japan</option>
+                <option value="usa">USA</option>
+              </select>
+            </div>
+            <div class="buton">
+              <button type="submit" class="btn">submit</button>
+              <button id="delete" class="btn">delete</button>
+              <button id="log_out" type="click" class="logOut_btn">
+                Logout
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- <input type="submit" class="btn" value="submit" />
+      <input class="btn_1" value="Delete-user" /> -->
+
+    <script>
+      let user_Detail = JSON.parse(localStorage.getItem("users"));
+      let login_email = JSON.parse(localStorage.getItem("userEmail"));
+      let get_detail = user_Detail.find((e) => e.user_email === login_email);
+      console.log(get_detail);
+
+      const details = JSON.parse(localStorage.getItem("users"));
+      const e_mail = JSON.parse(localStorage.getItem("userEmail"));
+      const getobj = details.find((e) => e["user_email"] == e_mail);
+      const fname = document.getElementById("username");
+      const lname = document.getElementById("l_name");
+      console.log(getobj);
+      const email = document.getElementById("email");
+      const ph_number = document.getElementById("number");
+      const user_profile = document.getElementById("user_pic");
+      const blood = document.getElementById("blood_grp");
+      fname.value = getobj["user_name"];
+      lname.value = getobj["lname"];
+      email.value = getobj["user_email"];
+      ph_number.value = getobj["user_number"];
+      user_profile.value = get_detail["user_profile"];
+      blood.value = getobj["blood"];
+
+      const form = document.getElementById("profile");
+      form.addEventListener("submit", function (customer) {
+        customer.preventDefault();
+        const fname = document.getElementById("username").value;
+        const lname = document.getElementById("l_name").value;
+        const email = document.getElementById("email").value;
+        const ph_number = document.getElementById("number").value;
+        const user_profile = document.getElementById("user_pic").value;
+        const blood = document.getElementById("blood_grp").value;
+        let state = document.getElementById("states").value;
+        let country = document.getElementById("country").value;
+        let gender = document.getElementById("gender").value;
+        const user_obj = {
+          fname,
+          lname,
+          email,
+          ph_number,
+          user_profile,
+          blood,
+          state,
+          country,
+          gender,
+        };
+        console.log(user_obj);
+        let updates = Object.assign(getobj, user_obj);
+        console.log(updates);
+        let index = details.indexOf(getobj);
+        // console.log(index);
+        details[index] = updates;
+        localStorage.setItem("users", JSON.stringify(details));
+        alert("You have successfully updated your account details!");
+        // window.location.href = "../pages/homepage.html";
+      });
+      const user_email = JSON.parse(window.localStorage.getItem("details"));
+      let check = true;
+      const presend_details = JSON.parse(window.localStorage.getItem("users"));
+      let get_presend = details.find(function (user_obj) {
+        let check_email = user_obj["email"];
+        if (e_mail === check_email) {
+          let fname1 = document.getElementById("username");
+          let lname1 = document.getElementById("l_name");
+          let mail1 = document.getElementById("email");
+          let phone1 = document.getElementById("number");
+          let blood1 = document.getElementById("blood_grp");
+          const user_profile = document.getElementById("user_pic");
+          let state1 = document.getElementById("states");
+          let country1 = document.getElementById("country");
+          let gender1 = document.getElementById("gender");
+          fname1.value = user_obj["fname"];
+          lname1.value = user_obj["lname"];
+          mail1.value = user_obj["email"];
+          phone1.value = user_obj["ph_number"];
+          blood1.value = user_obj["blood"];
+          user_profile.value = get_detail["user_profile"];
+          state1.value = user_obj["state"];
+          country1.value = user_obj["country"];
+          gender1.value = user_obj["gender"];
+        }
+      });
+
+      let delete_user = document.getElementById("delete");
+      delete_user.addEventListener("click", function (event) {
+        event.preventDefault();
+        let index = details.indexOf(getobj);
+        let msg = confirm("Are you sure you want to delete this account");
+        if (msg !== true) {
+          return;
+        } else {
+          details.splice(index, 1);
+          console.log(details);
+          localStorage.setItem("users", JSON.stringify(details));
+          window.location.href = "../pages/sign-in.html";
+        }
+      });
+      let logout = document.getElementById("log_out");
+      logout.addEventListener("click", function (e) {
+        alert("Are you want to logout the Account");
+        localStorage.removeItem("profile");
+        window.location.href = "../index.html";
+      });
+    </script>
+  </body>
+</html>

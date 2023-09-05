@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/dri_notify.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav id="js_header">
+      <!-- header part -->
+      <div class="logo">
+        <img src="../assets/images/Turbo trip.png" alt="logo" />
+      </div>
+      <ul class="snip1143">
+        <li class="current">
+          <a href="../pages/drive_with_us.html" data-hover="Home">Home</a>
+        </li>
+        <li>
+          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
+        </li>
+        <li>
+          <a href="../pages/collapse.html" data-hover="Notification"
+            >Notification</a
+          >
+        </li>
+        <li>
+          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
+        </li>
+      </ul>
+
+      <div class="user_profile">
+        <a href="../pages/dri_profile.html">
+          <img
+            src="../assets/images/gpro.png"
+            alt="use_pro"
+            class="user_profile1"
+        /></a>
+      </div>
+    </nav>
+    <section>
+      <!-- 5 -->
+    </section>
+  </body>
+  <script>
+    const bookings = JSON.parse(localStorage.getItem("bookings"));
+    for (let i = 0; i < bookings.length; i++) {
+      if (bookings[i]["raisedStatus"] == true) {
+        if (bookings[i]["bookingAccepted"] == false) {
+          // Create the necessary elements
+          const section = document.createElement("section");
+          const cardDiv = document.createElement("div");
+          const card1Div = document.createElement("div");
+          const image = document.createElement("img");
+          const contentDiv = document.createElement("div");
+          const heading1 = document.createElement("h1");
+          const heading2 = document.createElement("h2");
+          const heading3 = document.createElement("h3");
+          const heading4 = document.createElement("h4");
+          const buttonDiv = document.createElement("div");
+          const acceptButton = document.createElement("button");
+          const rejectButton = document.createElement("button");
+
+          // Add classes to the elements
+          cardDiv.className = "dri_card";
+          card1Div.className = "dri_card_1";
+          image.className = "cus_img";
+          acceptButton.className = "but1";
+          rejectButton.className = "but2";
+
+          // Set attributes and text content
+          image.src = ""; // Set the image source
+          heading1.textContent = "from : " + bookings[i]["user_pickup"];
+          heading2.textContent = "to : " + bookings[i]["user_drop"];
+          heading3.textContent = "date : " + bookings[i]["user_date"];
+          heading4.textContent = "time : " + bookings[i]["user_time"];
+          acceptButton.textContent = "accept";
+          acceptButton.setAttribute(
+            "onclick",
+            "acceptBooking(" + bookings[i]["bookind_id"] + ")"
+          );
+          rejectButton.textContent = "reject";
+
+          // Append the elements to their respective parent elements
+          cardDiv.append(card1Div);
+          card1Div.append(image);
+          card1Div.append(contentDiv);
+          contentDiv.append(heading1);
+          contentDiv.append(heading2);
+          contentDiv.append(heading3);
+          contentDiv.append(heading4);
+          cardDiv.append(buttonDiv);
+          buttonDiv.append(acceptButton);
+          buttonDiv.append(rejectButton);
+          //   buttonDiv.append(cardDiv);
+
+          // Append the section to the document body or any desired element
+          document.querySelector("section").append(cardDiv);
+        }
+      }
+    }
+    function generateNumericOTP(length) {
+      let numbers = "0123456789";
+      let otp = "";
+
+      for (let i = 0; i < length; i++) {
+        let randomIndex = Math.floor(Math.random() * numbers.length);
+        otp += numbers[randomIndex];
+      }
+
+      return otp;
+    }
+
+    // Example usage:
+
+    function acceptBooking(id) {
+      let con = confirm("are you sure want to accept this request");
+      if (con == true) {
+        let specificBook = bookings.find((e) => {
+          if (e["bookind_id"] == id) {
+            return true;
+          }
+        });
+
+        specificBook["bookingAccepted"] = true;
+        specificBook["OTP"] = generateNumericOTP(4);
+        let index = bookings.indexOf(specificBook);
+        bookings[index] = specificBook;
+        localStorage.setItem("bookings", JSON.stringify(bookings));
+        location.href = "../pages/driv_confrimcaed.html?id=" + id;
+      }
+    }
+
+    function rejectBooking() {}
+  </script>
+
+  <script>
+    let notificationDatas = JSON.parse(localStorage.getItem("bookings"));
+
+    let trueObject = {
+      isread: true,
+    };
+
+    for (let noti of notificationDatas) {
+      if (noti["isread"] == false) {
+        let trueData = Object.assign(noti, trueObject);
+        console.log(trueData);
+
+        // finding the index of the notification data
+
+        let notiIndex = notificationDatas.indexOf(noti);
+        console.log(notiIndex);
+
+        let spliceIndex = notificationDatas.splice(notiIndex, 1);
+
+        notificationDatas.push(trueData);
+
+        localStorage.setItem("bookings", JSON.stringify(notificationDatas));
+      }
+    }
+  </script>
+</html>

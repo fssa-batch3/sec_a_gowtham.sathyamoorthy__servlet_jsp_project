@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/taxi.css" />
+    <title>taxi</title>
+  </head>
+  <body>
+    <!-- this is embeded by the google maps -->
+    <div class="background">
+      <div class="first">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15551.75866629963!2d80.24239903251019!3d12.975710753649992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d6d804e0793%3A0xf310a6ebd244b2d0!2sGlobal%20Infocity%20Park%2C%20Ambedkar%20Nagar%2C%20Perungudi%2C%20Chennai%2C%20Tamil%20Nadu%20600096!5e0!3m2!1sen!2sin!4v1670767794796!5m2!1sen!2sin"
+          width="500"
+          height="580"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <div>
+          <h1>Taxi at the best prices !</h1>
+          <h2>Local . Airport . Outstation</h2>
+          <p class="h2">
+            Download Turbo-trip App to manage your best experience
+          </p>
+        </div>
+      </div>
+      <!-- this section is booking process -->
+      <div class="book">
+        <div class="btn">
+          <button class="btn1">Taxi Ride</button>
+          <button class="btn2">Taxi Rental</button>
+        </div>
+        <div>
+          <img
+            src="../assets/images/hd-green-dot-circle-icon-11642066802ysgbn4cpvp-removebg-preview.png"
+            alt="green dot"
+            class="green"
+          />
+          <input class="pickup" placeholder="Enter pickup address" /><br />
+        </div>
+
+        <div>
+          <img
+            src="../assets/images/r_circle-removebg-preview.png"
+            alt="red dot"
+            class="red"
+          />
+          <input class="drop" placeholder="Enter drop address" /><br />
+        </div>
+        <div class="last">
+          <a href="./carpool.html"><button class="car">Carpool</button></a>
+          <a href="./confrim.html"><button class="taxi">Book-Taxi</button></a>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+</html>
+let ed_car = document.getElementById("cars_detail");
+let params = window.location.search;
+let parameter = new URLSearchParams(params);
+let paraName = parameter.get("id");
+
+let paraArray = JSON.parse(localStorage.getItem("Cars_list"));
+let paraObj = paraArray.find(function (user) {
+  let Vehicle_model = user["Vehicle_model"];
+  //   console.log(Vehicle_model);
+  if (paraName == Vehicle_model) {
+    return true;
+  } else {
+    return false;
+  }
+});
+
+let image = document.getElementById("hello");
+
+let number = document.getElementById("hello1");
+let model = document.getElementById("hello2");
+
+let description = document.getElementById("hello3");
+
+image.value = Cars_list["Image"];
+number.value = Cars_list["Vehicle_no"];
+
+model.value = Cars_list["Vehicle_model"];
+description.value = Cars_list["Description"];
+let index = paraArray.indexOf(Cars_list);
+ed_car.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let image = document.getElementById("hello").value;
+  let number = document.getElementById("hello1").value;
+  let model = document.getElementById("hello2").value;
+  let description = document.getElementById("hello3").value;
+  let car_id = Date.now();
+
+  obj = {
+    Image,
+    Vehicle_no,
+    Vehicle_model,
+    Description,
+    car_id,
+  };
+  let newObj = Object.assign(paraObj, Cars_list);
+  paraArray[index] = newObj;
+  alert("update successfully");
+});

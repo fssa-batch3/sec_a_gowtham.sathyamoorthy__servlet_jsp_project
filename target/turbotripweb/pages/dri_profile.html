@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/profilepage.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav id="js_header">
+      <!-- header part -->
+      <div class="logo">
+        <img src="../assets/images/Turbo trip.png" alt="logo" />
+      </div>
+      <ul class="snip1143">
+        <li class="current">
+          <a href="../pages/drive_with_us.html" data-hover="Home">Home</a>
+        </li>
+        <li>
+          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
+        </li>
+        <li>
+          <a href="../pages/collapse.html" data-hover="Notification"
+            >Notification</a
+          >
+        </li>
+        <li>
+          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
+        </li>
+      </ul>
+
+      <div class="user_profile">
+        <a href="./profilepage-1.html">
+          <img
+            src="../assets/images/gpro.png"
+            alt="use_pro"
+            class="user_profile1"
+        /></a>
+      </div>
+    </nav>
+    <div class="card_1">
+      <div class="card-header">
+        <div class="text-header">Driver-Profile</div>
+      </div>
+      <div class="card-body">
+        <form id="profile">
+          <div class="deatail-1">
+            <div class="form-group">
+              <label class="username">First Name</label>
+              <input
+                required=""
+                class="form-control"
+                name="username"
+                id="username"
+                type="text"
+              />
+            </div>
+            <div class="form-group">
+              <label class="email">Last Name</label>
+              <input
+                required=""
+                class="form-control"
+                name="Last name"
+                id="l_name"
+                type="text"
+                placeholder="Enter Last name"
+              />
+            </div>
+            <div class="form-group">
+              <label class="password">Email</label>
+              <input
+                required=""
+                class="form-control"
+                name="email"
+                id="email"
+                type="email"
+              />
+            </div>
+            <div class="form-group">
+              <label class="mobile">Mobile Number</label>
+              <input
+                required=""
+                class="form-control"
+                name="PH_number"
+                id="number"
+                type="number"
+              />
+            </div>
+            <div class="form-group-1">
+              <label class="add">Driver-profile</label>
+              <input
+                required=""
+                class="form-control"
+                name="userad"
+                id="driver_pic"
+                type="url"
+                placeholder="Enter your image url"
+              />
+            </div>
+          </div>
+          <div class="details">
+            <div class="form-group">
+              <label class="add_1">Aadhar no :</label>
+              <input
+                required=""
+                class="form-control"
+                name="useradd"
+                id="aadhar"
+                type="number"
+                placeholder="7XXX 80XX 91XX"
+              />
+            </div>
+            <div class="form-group">
+              <label class="blood">Blood group</label>
+
+              <select id="blood_grp">
+                <option value="A+ve">A+ve</option>
+                <option value="B+ve">B+ve</option>
+                <option value="O+ve">O+ve</option>
+                <option value="A-ve">A-ve</option>
+                <option value="B-ve">B-ve</option>
+                <option value="O-ve">O-ve</option>
+                <option value="AB+ve">AB+ve</option>
+                <option value="AB-ve<">AB-ve</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="gender">Gender</label>
+
+              <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="state">Choose State</label>
+
+              <select id="states">
+                <option value="tamil-nadu">Tamil-nadu</option>
+                <option value="andra">Andrapradesh</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="kerala">Kerala</option>
+                <option value="delhi">Delhi</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="Country"> Choose Country</label>
+
+              <select id="country">
+                <option value="india">India</option>
+                <option value="china">China</option>
+                <option value="japan">Japan</option>
+                <option value="usa">USA</option>
+              </select>
+            </div>
+            <div class="buton">
+              <button type="submit" class="btn">submit</button>
+              <button id="delete" class="btn">delete</button>
+              <button id="log_out" type="click" class="logOut_btn">
+                Logout
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- <input type="submit" class="btn" value="submit" />
+      <input class="btn_1" value="Delete-user" /> -->
+
+    <script>
+      const details = JSON.parse(localStorage.getItem("Drivers"));
+      const e_mail = JSON.parse(localStorage.getItem("DriverEmail"));
+      const getobj = details.find((data) => e_mail === data["Driver_email"]);
+      //   console.log(getobj);
+      const fname = document.getElementById("username");
+      const lname = document.getElementById("l_name");
+      const email = document.getElementById("email");
+      const ph_number = document.getElementById("number");
+      const aadhar_no = document.getElementById("aadhar");
+      const blood = document.getElementById("blood_grp");
+      const driver_img = document.getElementById("driver_pic");
+      fname.value = getobj["Driver_name"];
+      email.value = getobj["Driver_email"];
+      ph_number.value = getobj["Driver_number"];
+      aadhar_no.value = getobj["aadhar"];
+      blood.value = getobj["blood_grp"];
+      driver_img.value = getobj["driver_pic"];
+
+      let form = document.getElementById("profile");
+      form.addEventListener("submit", function (customer) {
+        customer.preventDefault();
+        let fname = document.getElementById("username").value;
+        let lname = document.getElementById("l_name").value;
+        let email = document.getElementById("email").value;
+        let ph_number = document.getElementById("number").value;
+        let aadhar_no = document.getElementById("aadhar").value;
+        let blood = document.getElementById("blood_grp").value;
+        let driver_img = document.getElementById("driver_pic").value;
+        let state = document.getElementById("states").value;
+        let country = document.getElementById("country").value;
+        let gender = document.getElementById("gender").value;
+        let driver_obj = {
+          fname,
+          lname,
+          email,
+          ph_number,
+          aadhar_no,
+          blood,
+          driver_img,
+          state,
+          country,
+          gender,
+        };
+        console.log(driver_obj);
+        let updates = Object.assign(getobj, driver_obj);
+        console.log(updates);
+        let index = details.indexOf(getobj);
+        // console.log(index);
+        details[index] = updates;
+        localStorage.setItem("Drivers", JSON.stringify(details));
+        alert("You have successfully updated your account details!");
+      });
+      //   // const user_email = JSON.parse(window.localStorage.getItem("details"))
+      let check = true;
+      const presend_details = JSON.parse(
+        window.localStorage.getItem("Drivers")
+      );
+      let get_presend = details.find(function (driver_obj) {
+        let check_email = driver_obj["email"];
+        if (e_mail === check_email) {
+          let fname1 = document.getElementById("username");
+          let lname1 = document.getElementById("l_name");
+          let mail1 = document.getElementById("email");
+          let phone1 = document.getElementById("number");
+          let blood = document.getElementById("blood_grp");
+          const aadhar_no = document.getElementById("aadhar");
+          let driver_img = document.getElementById("driver_pic");
+          let state1 = document.getElementById("states");
+          let country1 = document.getElementById("country");
+          let gender1 = document.getElementById("gender");
+          fname1.value = driver_obj["fname"];
+          lname1.value = driver_obj["lname"];
+          mail1.value = driver_obj["email"];
+          phone1.value = driver_obj["ph_number"];
+          blood.value = driver_obj["blood_grp"];
+          aadhar_no.value = driver_obj["aadhar"];
+          driver_img.value = driver_obj["driver_pic"];
+          state1.value = driver_obj["state"];
+          country1.value = driver_obj["country"];
+          gender1.value = driver_obj["gender"];
+        }
+      });
+
+      let delete_user = document.getElementById("delete");
+      delete_user.addEventListener("click", function (event) {
+        event.preventDefault();
+        let index = details.indexOf(getobj);
+        let msg = confirm("Are you sure you want to delete this account");
+        if (msg !== true) {
+          return;
+        } else {
+          details.splice(index, 1);
+          console.log(details);
+          localStorage.setItem("Drivers", JSON.stringify(details));
+          window.location.href = "../pages/dri_sign-in.html";
+        }
+      });
+    </script>
+    <script></script>
+  </body>
+</html>

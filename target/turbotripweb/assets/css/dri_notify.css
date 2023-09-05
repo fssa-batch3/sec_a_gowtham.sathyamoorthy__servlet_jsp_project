@@ -1,0 +1,171 @@
+* {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  display: flex;
+  box-shadow: 0px 1px 20px rgb(45, 44, 44);
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-color: black;
+  z-index: 50;
+}
+/* #google_translate_element {
+  height: 20px;
+  width: 20px;
+} */
+.snip1143 {
+  font-family: "Raleway", Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.snip1143 * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1143 li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0 1.5em;
+  overflow: hidden;
+}
+.snip1143 a {
+  padding: 0.3em 0;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+  margin: 0;
+  text-decoration: none;
+}
+.snip1143 a:before,
+.snip1143 a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1143 a:before {
+  top: 100%;
+  display: block;
+  height: 3px;
+  width: 100%;
+  content: "";
+  background-color: #cfcccc;
+}
+.snip1143 a:after {
+  padding: 0.3em 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  content: attr(data-hover);
+  color: white;
+  white-space: nowrap;
+}
+.snip1143 li:hover a {
+  transform: translateY(-100%);
+}
+.navbar {
+  /* margin-right: 50px; */
+  padding-right: 40px;
+}
+.user_profile1 {
+  height: 50px;
+  width: 50px;
+  margin-right: 30px;
+}
+.logo img {
+  width: 83px;
+  height: 083px;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+.dri_card_1 {
+  display: flex;
+  border: 10px solid black;
+  width: 400px;
+  height: 180px;
+  background-color: rgb(29, 29, 29);
+  color: #cfcccc;
+  border-radius: 10px;
+}
+h1 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+h3 {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+h4 {
+  font-size: 20px;
+  margin-left: 20px;
+}
+.but1 {
+  background-color: green;
+  color: white;
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 50px;
+  margin-top: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+.but2 {
+  background-color: red;
+  color: white;
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 80px;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+.but1:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.but2:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 100px;
+  margin-top: 100px;
+}
+.name {
+  font-size: 40px;
+  font-weight: bolder;
+  color: rgb(223, 215, 215);
+  margin-left: 250px;
+}

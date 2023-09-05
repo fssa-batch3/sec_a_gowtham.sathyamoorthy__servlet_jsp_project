@@ -1,0 +1,255 @@
+html {
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.btn {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 12%;
+}
+
+.book_table {
+  background-image: url(../images/pexels-life-of-pix-8247.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: lighten;
+  height: 45rem;
+}
+
+.trip {
+  width: 100px;
+  height: 50px;
+}
+
+/* section-2 */
+.taxo-1 {
+  font-size: 70px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+.taxo-2 {
+  font-size: 40px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+  margin-left: 50px;
+}
+.c_taxi {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+.c_taxo {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+  margin-right: 100px;
+}
+.c_taxo1 {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+  margin-right: 150px;
+}
+.inform {
+  margin-left: 10px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.c_time {
+  height: 150px;
+  width: 150px;
+  margin-left: 50px;
+}
+.c_money {
+  height: 150px;
+  width: 150px;
+  margin-left: 100px;
+}
+
+.c_car {
+  height: 150px;
+  width: 150px;
+  margin-left: 50px;
+}
+.c_address {
+  height: 150px;
+  width: 150px;
+  margin-left: 50px;
+}
+.c_driver {
+  height: 150px;
+  width: 150px;
+  margin-left: 40px;
+}
+.c_taxipool {
+  height: 150px;
+  width: 150px;
+  margin-left: 100px;
+}
+.c_cancel {
+  height: 150px;
+  width: 150px;
+  margin-left: 100px;
+}
+.c_support {
+  height: 150px;
+  width: 150px;
+  margin-left: 50px;
+}
+/* section part-1 */
+.download {
+  display: flex;
+  background-color: rgb(241, 238, 238);
+}
+.appimage {
+  display: flex;
+}
+.line1 {
+  font-weight: bolder;
+  font-size: 60px;
+  padding-bottom: 30px;
+  padding-top: 90px;
+  margin-left: 82px;
+  letter-spacing: -0.15px;
+}
+.line2 {
+  margin-left: 20px;
+  color: rgb(18, 76, 37);
+  font-weight: bolder;
+  font-size: 35px;
+  margin-left: 82px;
+  padding-bottom: 30px;
+}
+.playstore {
+  width: 255px;
+  height: 65px;
+  margin-left: 85px;
+  margin-top: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.playstore:hover {
+  transform: scale(1.1);
+}
+.appstore {
+  width: 255px;
+  height: 65px;
+  margin-left: 50px;
+  margin-top: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.appstore:hover {
+  transform: scale(1.1);
+}
+.taxi-1 {
+  height: 700px;
+  width: 600px;
+  margin-top: -20px;
+}
+
+/* footer part */
+.icon1 {
+  width: 50px;
+  height: 30px;
+  margin-left: 15px;
+}
+.address p {
+  font-size: 20px;
+  color: gold;
+  margin-left: 03%;
+  margin-top: 20px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.icon {
+  margin-left: 4.5%;
+}
+.icon2 {
+  color: gold;
+  margin-top: -220px;
+  margin-left: 75px;
+  font-size: 25px;
+}
+.icon1 {
+  margin-top: 30px;
+  height: 50px;
+  margin-left: 20px;
+}
+.footer4 {
+  margin-left: 40%;
+  margin-top: -220px;
+  margin-right: 50px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: gold;
+}
+.footer5 {
+  margin-left: 05%;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: -220px;
+  color: gold;
+}
+.footer6 {
+  display: flex;
+}
+.footer8 {
+  color: rgb(237, 233, 233);
+  padding-left: 38%;
+  border-top: 1px solid rgb(229, 226, 226);
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+ul {
+  padding: 5px;
+}
+footer {
+  background-color: black;
+}
+.footer {
+  display: flex;
+}
+.footer1 {
+  font-size: 30px;
+  margin-top: 40px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-left: 20px;
+}
+.footer2 {
+  width: 150px;
+  margin-left: 25px;
+  margin-top: 70px;
+  color: red;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.footer7 {
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 25px;
+  margin-right: 70px;
+}
+.address {
+  font-size: 20px;
+  color: white;
+  margin-left: 03%;
+  margin-top: 20px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.t2 {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
