@@ -28,7 +28,7 @@ th {
 </style>
 <body>
 	<h1>All Attached CarList</h1>
-	<%
+	<% 
 	List<Car> cars = (List<Car>) session.getAttribute("cars");
 	%>
 	<table>

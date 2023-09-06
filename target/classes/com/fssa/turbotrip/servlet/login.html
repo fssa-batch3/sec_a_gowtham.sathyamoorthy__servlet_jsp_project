@@ -4,19 +4,46 @@
 <meta charset="ISO-8859-1">
 <title>Login</title>
 </head>
+<style>
+        .password-toggle {
+            position: relative;
+        }
+
+        .password-toggle input[type="password"] {
+            padding-right: 30px;
+        }
+
+        .password-toggle .toggle-btn {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
 <body>
 	<h1>Login Page</h1>
-		
-	<form action="login" method="post">
-		<label>Email: </label>
-		<input type="email" name = "email" placeholder="Enter email">
-		<br />
-		<label>Password: </label>
-		
-		<input type="password" name = "password" placeholder="Enter password">
-		<br />
-		<button type="submit" >Submit</button>
-	</form>
-\
+		    
+
+    <div class="password-toggle">
+        <input type="password" id="password" placeholder="Password">
+        <span class="toggle-btn" onclick="togglePasswordVisibility()">&#128065;</span>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("password");
+            const toggleButton = document.querySelector(".toggle-btn");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleButton.innerHTML = "&#128064;"; // Change to an eye-slash symbol
+            } else {
+                passwordInput.type = "password";
+                toggleButton.innerHTML = "&#128065;"; // Change back to an eye symbol
+            }
+        }
+    </script>
+	
 </body>
 </html>

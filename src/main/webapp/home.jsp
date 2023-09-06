@@ -20,7 +20,7 @@
 	
 %>
 
-<p>Logged In user: <%=loggedInEmail%> </p>
+
 <a href="GetAllUsersServlet">Get all Users</a><br>
 <a href="AttachCar.jsp">Add your car</a><br>
 <a href="LogoutServlet">logout</a><br>

@@ -29,14 +29,15 @@ public class GetAllCarListServlet extends HttpServlet {
 		CarService carservice = new CarService();
 		try {
 			cars = carservice.getAllCarlists();
+			HttpSession session = request.getSession();
+			session.setAttribute("cars", cars);
+			
+			RequestDispatcher dispatcher =request.getRequestDispatcher("display_all_car.jsp");
+			dispatcher.forward(request, response);
 			
 		}catch(ServiceException e) {
 			e.printStackTrace();
 		}
-		HttpSession session = request.getSession();
-		session.setAttribute("cars", cars);
-		RequestDispatcher dispatcher =request.getRequestDispatcher("display_all_car.jsp");
-		dispatcher.forward(request, response);
 		
 	}
 
