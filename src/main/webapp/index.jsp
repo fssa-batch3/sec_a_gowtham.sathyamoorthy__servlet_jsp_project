@@ -2,19 +2,19 @@
 <html>
 <head>
 <style>
-/* Reset some default styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Basic styles for the entire page */
+
 body {
     font-family: Arial, sans-serif;
 }
 
-/* Header styles */
+
 header {
     background-color: #333;
     color: #fff;
@@ -48,7 +48,7 @@ nav {
     text-decoration: none;
 }
 
-/* Hero section styles */
+
 .hero {
     background-image: url('your-hero-image.jpg');
     background-size: cover;
@@ -102,7 +102,6 @@ nav {
     margin-bottom: 10px;
 }
 
-/* Footer styles */
 footer {
     background-color: #333;
     color: #fff;
@@ -145,11 +144,7 @@ footer {
     margin-bottom: 30px;
 }
 
-/* .banner-image {
-    flex: 1;
-    
-}
- */
+
 .banner-image {
     border-radius: 5px;
      max-width: 30%;
