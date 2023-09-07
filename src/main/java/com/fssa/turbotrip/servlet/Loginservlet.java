@@ -23,7 +23,7 @@ import com.fssa.turbotrip.service.exception.ServiceException;
 public class Loginservlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		resp.getWriter().print("check");
 	}
 

@@ -82,25 +82,36 @@ input[type="submit"]:hover, a button:hover {
 .pass {
 	display: flex;
 }
+.error {
+  color: red;
+  width: 40%;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 </style>
 <body>
 
 	<jsp:include page="header.jsp"></jsp:include>
 	<h1>User Registration Form</h1>
-	<%
-			String errorMessage = request.getParameter("errorMessage");
-			if (errorMessage != null) {
-				out.println("<p class='error'>" + errorMessage + "</p>");
-			}
-			%>
+	<% 
+       			String errorMessage = (String) request.getAttribute("errorMessage");
+    			if (errorMessage != null) { 
+				%>
+    			<p class='error'><%= errorMessage %></p>
+				<% } %>
 	<form action="register" method="post">
 		<label for="name">User name:</label> <input type="text" id="name"
-			name="name" required><br> <br> <label for="email">Email:</label>
-		<input type="email" id="email" name="email" required><br>
+			name="name"  value ="${name}" required><br> <br> <label for="email">Email:</label>
+		<input type="email" id="email" name="email" value="${email}" required><br>
 		<br> <label for="phone">Phone:</label> <input type="tel"
-			id="phone" name="phone" required><br> <br> <label
+			id="phone" name="phone" value="${phone}" required><br> <br> <label
 			for="password">Password:</label> <input type="password" id="password"
-			name="password" required><br>
+			name="password" value="${password}" required><br>
 		<div class="pass">
 			<input type="submit" value="Register"> <a href="loggin.jsp"><button
 					onclick="login()">Login</button></a>
