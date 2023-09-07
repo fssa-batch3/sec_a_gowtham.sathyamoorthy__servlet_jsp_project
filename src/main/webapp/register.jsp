@@ -24,7 +24,7 @@ label {
 	font-weight: bold;
 }
 
-input[type="text"], input[type="email"], input[type="phone"], input[type="password"]
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"]
 	{
 	width: 100%;
 	padding: 10px;
@@ -74,7 +74,7 @@ a {
 	margin-top: 20px;
 }
 
-/* Hover effect for buttons */
+
 input[type="submit"]:hover, a button:hover {
 	background-color: #0056b3;
 }
@@ -84,13 +84,20 @@ input[type="submit"]:hover, a button:hover {
 }
 </style>
 <body>
+
 	<jsp:include page="header.jsp"></jsp:include>
 	<h1>User Registration Form</h1>
+	<%
+			String errorMessage = request.getParameter("errorMessage");
+			if (errorMessage != null) {
+				out.println("<p class='error'>" + errorMessage + "</p>");
+			}
+			%>
 	<form action="register" method="post">
 		<label for="name">User name:</label> <input type="text" id="name"
 			name="name" required><br> <br> <label for="email">Email:</label>
 		<input type="email" id="email" name="email" required><br>
-		<br> <label for="phone">Phone:</label> <input type="phone"
+		<br> <label for="phone">Phone:</label> <input type="tel"
 			id="phone" name="phone" required><br> <br> <label
 			for="password">Password:</label> <input type="password" id="password"
 			name="password" required><br>

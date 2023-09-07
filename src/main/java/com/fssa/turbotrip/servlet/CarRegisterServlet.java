@@ -46,7 +46,7 @@ public class CarRegisterServlet extends HttpServlet {
 			e.printStackTrace();
 			out.println(e.getMessage());
 			}
-		}
+		} 
 
 		@Override
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

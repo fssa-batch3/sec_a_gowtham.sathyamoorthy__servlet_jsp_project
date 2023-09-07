@@ -57,7 +57,7 @@ for (Car car : cars) {
 			<td><a href="DeleteCarServlet?id=<%= car.getCarId() %>"><button>Delete</button></a>
 			</td>
 			
-			</td>
+			
 		</tr>
 		<%
 }

@@ -43,13 +43,13 @@ public class RegistrationServlet extends HttpServlet {
 			}
 		} catch (ServiceException e) {
 			
-			out.print("Invalid Details");
+			//out.print("Invalid Details");
 
-			((PrintWriter) response).print("register.jsp? Invalid login Credentials");
+			response.sendRedirect("register.jsp?errorMessage=Invalid login Credentials:"+e.getMessage());
 
-			out.println(e.getMessage());
+		//	out.println(e.getMessage());
 
-			out.println("Registration failed!");
+			//out.println("Registration failed!");
 //			RequestDispatcher dispatcher = request.getRequestDispatcher("register.jsp");
 //			dispatcher.forward(request, response);
 
