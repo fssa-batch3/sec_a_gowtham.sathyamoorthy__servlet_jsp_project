@@ -32,7 +32,7 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 
 		PrintWriter out = response.getWriter();
-		User user1 = new User(name, email,phone, password, 0, false);
+		User user1 = new User(name, email, phone, password, 0, false);
 		UserService userService = new UserService();
 
 		try {
@@ -41,27 +41,16 @@ public class RegistrationServlet extends HttpServlet {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("loggin.jsp");
 				dispatcher.forward(request, response);
 			}
-			
-			
+
 		} catch (ServiceException e) {
-			
+
 			request.setAttribute("name", name);
 			request.setAttribute("email", email);
 			request.setAttribute("phone", phone);
 			request.setAttribute("password", password);
-			
+
 			request.setAttribute("errorMessage", "Create Register Failed: " + e.getMessage());
 			request.getRequestDispatcher("register.jsp").forward(request, response);
-			
-			//out.print("Invalid Details");
-
-			//response.sendRedirect("register.jsp?errorMessage=Invalid login Credentials:"+e.getMessage());
-
-		//	out.println(e.getMessage());
-
-			//out.println("Registration failed!");
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("register.jsp");
-//			dispatcher.forward(request, response);
 
 		}
 
