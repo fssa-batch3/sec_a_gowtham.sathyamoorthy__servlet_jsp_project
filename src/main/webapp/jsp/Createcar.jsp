@@ -45,14 +45,14 @@
 				<label>Car-Reg-No:</label> <input type="text" id="ca_r1"
 					name="ca_r1"
 					pattern="^[A-Za-z]{2}[-][0-9]{1,2}[-][A-Za-z]{1,2}[-][0-9]{3,4}$"
-					value="Tn-07-bd-1234" required /><br />
+					value="Tn 07 bd 1234" required /><br />
 			</div>
 			<div class="l_3">
 				<label>Car-Model:</label> <input type="text" id="ca_r2" name="ca_r2"
 					pattern="[A-Za-z0-9 ]{1,18}" required /><br />
 			</div>
 			<div class="l_4">
-				<label>Car-Details: </label> <input type="textarea" id="ca_r3"
+				<label>Car-Details: </label> <input type="text" id="ca_r3"
 					name="ca_r3" pattern="[A-Za-z ]{1,20}" required /><br />
 			</div>
 			<input type="submit" id="ca_r4" />

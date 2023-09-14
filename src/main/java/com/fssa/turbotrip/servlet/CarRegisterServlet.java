@@ -40,7 +40,7 @@ public class CarRegisterServlet extends HttpServlet {
 			}
 			else {
 				out.println("Car Registration failed!");
-				response.sendRedirect("AttachCar.jsp");
+				response.sendRedirect("CreateCar.jsp");
 			}
 		} catch (ServiceException e) {
 			e.printStackTrace();

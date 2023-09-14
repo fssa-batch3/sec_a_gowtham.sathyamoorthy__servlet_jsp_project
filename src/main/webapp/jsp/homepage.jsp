@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
@@ -12,45 +13,18 @@
     <title>100 day project</title>
   </head>
   <body>
-    <nav id="js_header">
-      <!-- header part -->
-      <div class="logo">
-        <img src="../assets/images/Turbo trip.png" alt="logo" />
-      </div>
-      <ul class="snip1143">
-        <li class="current"><a href="../index.html" data-hover="Home">Home</a></li>
-        <li>
-          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
-        </li>
-        <li>
-          <a href="../pages/collapse.html" data-hover="Notification"
-            >Notification</a
-          >
-        </li>
-        <li>
-          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
-        </li>
-      </ul>
-
-      <div class="user_profile">
-        <a href="./profilepage-1.html">
-          <img
-            src="../assets/images/gpro.png"
-            alt="use_pro"
-            class="user_profile1"
-        /></a>
-      </div>
-    </nav>
+<jsp:include page="header.jsp"></jsp:include>
+    
 
     <!-- section-1 -->
     <div class="head2">
       <div class="car">
-        <img src="../assets/images/scorpio.png" alt="car" class="img1" />
+        <img src="<%=request.getContextPath()%>/assets/images/scorpio.png" alt="car" class="img1" />
         <p class="carpool">Carpool</p>
       </div>
       <div class="bike">
         <img
-          src="../assets/images/rohan-Fiq-gmcq_V8-unsplash-removebg-preview.png"
+          src="<%=request.getContextPath()%>/assets/images/rohan-Fiq-gmcq_V8-unsplash-removebg-preview.png"
           alt="bike"
           class="img"
         />
@@ -59,7 +33,7 @@
       <div class="taxi">
         <a href="/pages/book taxi.html"
           ><img
-            src="../assets/images/17629097_ThanitJuly_42-removebg-preview.png"
+            src="<%=request.getContextPath()%>/assets/images/17629097_ThanitJuly_42-removebg-preview.png"
             alt="taxi"
             class="img"
         /></a>
@@ -67,7 +41,7 @@
       </div>
       <div class="porter">
         <img
-          src="../assets/images/tru2-removebg-preview.png"
+          src="<%=request.getContextPath()%>/assets/images/tru2-removebg-preview.png"
           alt="truck"
           class="img4"
         />
@@ -100,7 +74,7 @@
     <!-- section-2.1(content) -->
     <div class="first">
       <video
-        src="../assets\turbotrip video.mp4"
+        src="<%=request.getContextPath()%>/assets/turbotrip video.mp4"
         class="first-video"
         autoplay
         loop
@@ -114,7 +88,7 @@
           <a href="tel:9551555231" class="href">
             <button class="call">
               <img
-                src="../assets\images\phone-unscreen.gif"
+                src="<%=request.getContextPath()%>/assets\images\phone-unscreen.gif"
                 class="gif-phone"
                 alt="gif"
               />
@@ -143,7 +117,7 @@
     <div class="carpooling">
       <div>
         <img
-          src="../assets/images/why-kei-8e2gal_GIE8-unsplash.jpg"
+          src="<%=request.getContextPath()%>/assets/images/why-kei-8e2gal_GIE8-unsplash.jpg"
           alt="carpooling"
           class="travel"
         />
@@ -171,13 +145,13 @@
       </div>
 
       <div>
-        <img src="../assets/images/car2.jpg" alt="carpooling1" class="route" />
+        <img src="<%=request.getContextPath()%>/assets/images/car2.jpg" alt="carpooling1" class="route" />
       </div>
     </div>
     <div class="carpooling2">
       <div>
         <img
-          src="../assets/images/prasad-panchakshari-FxiCrJTzt0w-unsplash.jpg"
+          src="<%=request.getContextPath()%>/assets/images/prasad-panchakshari-FxiCrJTzt0w-unsplash.jpg"
           class="travel"
           alt="carpooling2"
         />
@@ -201,7 +175,7 @@
       <div class="facility">
         <div>
           <img
-            src="../assets/images/customer-1.webp"
+            src="<%=request.getContextPath()%>/assets/images/customer-1.webp"
             class="cus-1"
             alt="customer"
           />
@@ -213,7 +187,7 @@
         </div>
         <div>
           <img
-            src="../assets/images/customer-2.webp"
+            src="<%=request.getContextPath()%>/assets/images/customer-2.webp"
             alt="customer"
             class="cus-2"
           />
@@ -226,7 +200,7 @@
         </div>
         <div>
           <img
-            src="../assets/images/customer-3.webp"
+            src="<%=request.getContextPath()%>/assets/images/customer-3.webp"
             alt="customer"
             class="cus-3"
           />
@@ -245,15 +219,15 @@
       <p class="work">Simple . Secure . Share</p>
       <div class="map">
         <div>
-          <img src="../assets/images/map1.png" alt="map1" class="map1" />
+          <img src="<%=request.getContextPath()%>/assets/images/map1.png" alt="map1" class="map1" />
           <p class="working1">one click to create a ride</p>
         </div>
         <div>
-          <img src="../assets/images/map2.png" alt="map2" class="map1" />
+          <img src="<%=request.getContextPath()%>/assets/images/map2.png" alt="map2" class="map1" />
           <p class="working2">Select ride and Connect</p>
         </div>
         <div>
-          <img src="../assets/images/map3.png" alt="map3" class="map1" />
+          <img src="<%=request.getContextPath()%>/assets/images/map3.png" alt="map3" class="map1" />
           <p class="working3">Start your ride</p>
         </div>
       </div>
@@ -318,7 +292,7 @@
     <div class="impact">
       <div class="impact1">
         <img
-          src="../assets/images/person-removebg-preview.png"
+          src="<%=request.getContextPath()%>/assets/images/person-removebg-preview.png"
           alt="men"
           class="men"
         />
@@ -329,7 +303,7 @@
       </div>
       <div class="impact2">
         <img
-          src="../assets/images/benjamin-child-7Cdw956mZ4w-unsplash-removebg-preview.png"
+          src="<%=request.getContextPath()%>/assets/images/benjamin-child-7Cdw956mZ4w-unsplash-removebg-preview.png"
           alt="bmw"
           class="audi"
         />
@@ -340,7 +314,7 @@
       </div>
       <div class="impact3">
         <img
-          src="../assets/images/smoke-removebg-preview (1).png "
+          src="<%=request.getContextPath()%>/assets/images/smoke-removebg-preview (1).png "
           alt="smoke"
           class="benz"
         />
@@ -359,7 +333,7 @@
     <div class="download">
       <div data-aos="fade-left" data-aos-duration="800">
         <img
-          src="../assets/images/17868816_5932505-removebg-preview.png"
+          src="<%=request.getContextPath()%>/assets/images/17868816_5932505-removebg-preview.png"
           alt="phone"
           class="phone"
         />
@@ -371,9 +345,9 @@
           partner of Turbo trip
         </p>
 
-        <img src="../assets/images/store1.png" alt="playstore" class="store1" />
+        <img src="<%=request.getContextPath()%>/assets/images/store1.png" alt="playstore" class="store1" />
         <img
-          src="../assets/images/Download_on_the_App_Store_Badge.svg.png "
+          src="<%=request.getContextPath()%>/assets/images/Download_on_the_App_Store_Badge.svg.png "
           alt="appstore"
           class="store2"
         />
@@ -385,7 +359,7 @@
     <!-- footer part of turbo trip -->
     <footer>
       <div class="footer">
-        <img src="../assets/images/Turbo trip.png " alt="logo" class="t2" />
+        <img src="<%=request.getContextPath()%>/assets/turbostrip.png " alt="logo" class="t2" />
         <div class="footer3">
           <p class="footer2">Turbo-Trip</p>
           <p class="footer7">Carpool . Bikepool . Taxi</p>
@@ -438,23 +412,23 @@
         <div class="icon">
           <p class="icon2">Follow us :</p>
           <img
-            src="../assets/images/facebook.png"
+            src="<%=request.getContextPath()%>/assets/images/facebook.png"
             alt="facebook"
             class="icon1"
           />
           <img
-            src="../assets/images/instagram.png"
+            src="<%=request.getContextPath()%>/assets/images/instagram.png"
             alt="instagram"
             class="icon3"
           />
-          <img src="../assets/images/twitter.png" alt="twitter" class="icon1" />
+          <img src="<%=request.getContextPath()%>/assets/images/twitter.png" alt="twitter" class="icon1" />
           <img
-            src="../assets/images/telegram.png"
+            src="<%=request.getContextPath()%>/assets/images/telegram.png"
             alt="telegram"
             class="icon1"
           />
           <img
-            src="../assets/images/whatsapp-111.png"
+            src="<%=request.getContextPath()%>/assets/images/whatsapp-111.png"
             alt="linkedin"
             class="icon1"
           />

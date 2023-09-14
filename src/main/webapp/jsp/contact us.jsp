@@ -9,10 +9,11 @@
   </head>
   <body>
     <div>
+
       <nav id="js_header">
         <!-- header part -->
         <div class="logo">
-          <img src="../assets/images/Turbo trip.png" alt="logo" />
+          <img src="../assets/turbostrip.png" alt="logo" />
         </div>
         <ul class="snip1143">
           <li class="current"><a href="#" data-hover="Home">Home</a></li>

@@ -15,6 +15,7 @@ form {
 	border-radius: 5px;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 	background-color: #f9f9f9;
+	margin-top: 100px
 }
 
 label {
@@ -59,7 +60,7 @@ button[type="submit"] {
 h1 {
 	text-align: center;
 	color: #333;
-	margin-bottom: 20px;
+	margin-top: 50px;
 }
 
 p {
@@ -87,7 +88,7 @@ button[type="submit"]:hover {
 		out.println("<p>" + errorMessage + "</p>");
 	}
 	%>
-	<form action="login" method="post">
+	<form action="<%=request.getContextPath() %>/login" method="post">
 
 		<label>Email: </label> <input type="email" name="email"
 			placeholder="Enter email"> <br /> 
