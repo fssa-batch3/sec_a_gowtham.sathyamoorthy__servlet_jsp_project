@@ -32,7 +32,7 @@ public class GetAllCarListServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("cars", cars);
 			
-			RequestDispatcher dispatcher =request.getRequestDispatcher("display_all_car.jsp");
+			RequestDispatcher dispatcher =request.getRequestDispatcher("jsp/display_all_car.jsp");
 			dispatcher.forward(request, response);
 			
 		}catch(ServiceException e) {

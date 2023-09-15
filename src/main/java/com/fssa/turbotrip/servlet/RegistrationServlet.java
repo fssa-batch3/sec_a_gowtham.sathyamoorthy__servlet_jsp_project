@@ -32,13 +32,14 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 
 		PrintWriter out = response.getWriter();
+		out.print("post");
 		User user1 = new User(name, email, phone, password, 0, false);
 		UserService userService = new UserService();
 
 		try {
 			if (userService.registerUser(user1)) {
-				out.println("Registration successful!");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("loggin.jsp");
+				System.out.println("Registration successful!");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/loggin.jsp");
 				dispatcher.forward(request, response);
 			}
 
@@ -48,9 +49,9 @@ public class RegistrationServlet extends HttpServlet {
 			request.setAttribute("email", email);
 			request.setAttribute("phone", phone);
 			request.setAttribute("password", password);
-
+			System.out.println("Registration unsuccessful!");
 			request.setAttribute("errorMessage", "Create Register Failed: " + e.getMessage());
-			request.getRequestDispatcher("register.jsp").forward(request, response);
+			request.getRequestDispatcher("jsp/register.jsp").forward(request, response);
 
 		}
 
@@ -58,7 +59,8 @@ public class RegistrationServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		super.doGet(req, resp);
+	resp.getWriter().print("chk");
+	
 	}
 
 }

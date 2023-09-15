@@ -42,10 +42,8 @@ public class Loginservlet extends HttpServlet {
 		try {
 			if (userService.loginUser(user)) {
 				out.println("Login Successfull...");
-				User loggedUser = userService.getUser(email);
-
 				HttpSession session = request.getSession();
-				session.setAttribute("loggedInEmail", loggedUser);
+				session.setAttribute("loggedInEmail", email);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/homepage.jsp");
 				dispatcher.forward(request, response);
 			}

@@ -5,6 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/style.css" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+	rel="stylesheet" /> 
 </head>
 <style>
 form {
@@ -24,8 +30,7 @@ label {
 	font-weight: bold;
 }
 
-input[type="email"], 
-input[type="password"] {
+input[type="email"], input[type="password"] {
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 15px;
@@ -42,19 +47,16 @@ button[type="submit"] {
 	border-radius: 3px;
 	font-size: 18px;
 	cursor: pointer;
-	
 }
-#password{
 
+#password {
 	border: none;
 	padding: 10px 20px;
 	border-radius: 3px;
 	font-size: 18px;
 	width: 100%;
 	padding: 10px;
-	
 }
-
 
 /* Style for the heading */
 h1 {
@@ -88,15 +90,14 @@ button[type="submit"]:hover {
 		out.println("<p>" + errorMessage + "</p>");
 	}
 	%>
-	<form action="<%=request.getContextPath() %>/login" method="post">
+	<form action="<%=request.getContextPath()%>/login" method="post">
 
 		<label>Email: </label> <input type="email" name="email"
-			placeholder="Enter email"> <br /> 
-
-	<label>Password </label><br> <input type="password" name="password"	id="password"
-			placeholder="Enter password"> <br /> 
-		 <br /> <input type="checkbox"
-			onclick="myFunction()"> Show Password<br><br>
+			placeholder="Enter email"> <br /> <label>Password </label><br>
+		<input type="password" name="password" id="password"
+			placeholder="Enter password"> <br /> <br /> <input
+			type="checkbox" onclick="myFunction()"> Show Password<br>
+		<br>
 
 		<button type="submit">Submit</button>
 	</form>

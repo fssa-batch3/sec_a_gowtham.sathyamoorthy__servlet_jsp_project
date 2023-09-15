@@ -44,8 +44,8 @@
 			<div class="l_2">
 				<label>Car-Reg-No:</label> <input type="text" id="ca_r1"
 					name="ca_r1"
-					pattern="^[A-Za-z]{2}[-][0-9]{1,2}[-][A-Za-z]{1,2}[-][0-9]{3,4}$"
-					value="Tn 07 bd 1234" required /><br />
+					
+					placeholder="Tn 07 bd 1234" required /><br />
 			</div>
 			<div class="l_3">
 				<label>Car-Model:</label> <input type="text" id="ca_r2" name="ca_r2"

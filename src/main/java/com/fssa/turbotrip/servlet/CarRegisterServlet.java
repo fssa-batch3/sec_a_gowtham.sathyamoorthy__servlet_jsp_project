@@ -35,7 +35,7 @@ public class CarRegisterServlet extends HttpServlet {
 		try {
 			if (carService.createCar(car)) {
 				out.println("Car Registration successful!");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("listcar.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/listcar.jsp");
 				dispatcher.forward(request, response);
 			}
 			else {

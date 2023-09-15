@@ -5,6 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/style.css" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+	rel="stylesheet" />
 </head>
 <style>
 form {
@@ -106,7 +112,7 @@ input[type="submit"]:hover, a button:hover {
 	<%
 	}
 	%>
-	<form action="register" method="post">
+	<form action="<%=request.getContextPath()%>/register" method="post">
 		<label for="name">User name:</label> <input type="text" id="name"
 			name="name" value="${name}" required><br> <br> <label
 			for="email">Email:</label> <input type="email" id="email"
