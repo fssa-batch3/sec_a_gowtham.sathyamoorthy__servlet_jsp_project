@@ -1,81 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/css/list_editcar.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <nav id="js_header">
-      <!-- header part -->
-      <div class="logo">
-        <img src="../assets/images/Turbo trip.png" alt="logo" />
-      </div>
-      <ul class="snip1143">
-        <li class="current"><a href="#" data-hover="Home">Home</a></li>
-        <li>
-          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
-        </li>
-        <li>
-          <a href="../pages/dri_notify.html" data-hover="Notification"
-            >Notification</a
-          >
-        </li>
-        <li>
-          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
-        </li>
-      </ul>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../assets/css/list_editcar.css" />
+<title>Document</title>
+</head>
+<body>
+	<nav id="js_header">
+		<!-- header part -->
+		<div class="logo">
+			<img src="../assets/images/Turbo trip.png" alt="logo" />
+		</div>
+		<ul class="snip1143">
+			<li class="current"><a href="#" data-hover="Home">Home</a></li>
+			<li><a href="../pages/About us.html" data-hover="About Us">About
+					Us</a></li>
+			<li><a href="../pages/dri_notify.html" data-hover="Notification">Notification</a>
+			</li>
+			<li><a href="../pages/contact us.html" data-hover="Contact">Contact</a>
+			</li>
+		</ul>
 
-      <div class="user_profile">
-        <a href="../pages/dri_profile.html">
-          <img
-            src="../assets/images/gpro.png"
-            alt="use_pro"
-            class="user_profile1"
-        /></a>
-      </div>
-    </nav>
-    <div class="list_1">
-      <form action="#" id="cars_detail">
-        <div class="l_1">
-          <label>Car-Image:</label>
-          <input type="url" id="ca_r" required /><br />
-        </div>
-        <div class="l_2">
-          <label>Car-Reg-No:</label>
-          <input
-            type="text"
-            id="ca_r1"
-            required
-            pattern="^[A-Za-z]{2}[-][0-9]{1,2}[-][A-Za-z]{1,2}[-][0-9]{3,4}$"
-          /><br />
-        </div>
-        <div class="l_3">
-          <label>Car-Model:</label>
-          <input
-            type="text"
-            id="ca_r2"
-            required
-            pattern="[A-Za-z0-9 ]{1,18}"
-          /><br />
-        </div>
-        <div class="l_4">
-          <label>Car-Details: </label>
-          <input
-            type="textarea"
-            id="ca_r3"
-            required
-            pattern="[A-Za-z ]{1,20}"
-          /><br />
-        </div>
-        <input type="submit" value="Save" id="hello4" />
-        <input type="submit" value="Delete" id="hello5" />
-      </form>
-    </div>
-  </body>
-  <script>
+		<div class="user_profile">
+			<a href="../pages/dri_profile.html"> <img
+				src="../assets/images/gpro.png" alt="use_pro" class="user_profile1" /></a>
+		</div>
+	</nav>
+	<div class="list_1">
+		<form method="post"
+			action="<%=request.getContextPath()%>/UpdateCarServlet"
+			id="cars_detail">
+			<h1>Change Your Car details here :</h1>
+			<div class="l_1">
+				<label>Car-Image:</label> <input type="text" id="ca_r"
+					name="carImage" required /><br />
+			</div>
+			<label id=lab>Car-Details: </label>
+			<div class="l_4">
+
+				<input type="text" id="ca_r3" name="description" required
+					pattern="[A-Za-z ]{1,20}" /><br />
+			</div>
+			<div class="btn">
+				<input type="submit" value="Update Car" id="hello4" /> <input
+					type="submit" value="Delete" id="hello5" />
+			</div>
+		</form>
+	</div>
+</body>
+<script>
     //    creating URL params function to find the car details
 
     let carUrl = window.location.search;

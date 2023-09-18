@@ -104,20 +104,29 @@ nav {
   margin-left: 10px;
 }
 .list_1 {
-  width: 34rem;
-  margin-left: 1rem;
+  width: 23rem;
+  margin-left: 69rem;
+  height: 25rem;
   padding: 2rem;
-  margin-top: 12rem;
+  margin-top: 15rem;
   border: 2px solid black;
   border-radius: 15px;
-  background-color: rgba(151, 151, 151, 0.5);
+  background-color: rgba(151, 151, 151, 0.9);
+}
+h1{
+	font-size:1.5rem;
 }
 label {
   font-size: 1.3rem;
   font-weight: bold;
+  
+}
+#lab{
+margin-top:2rem;
+font-size: 1.3rem;
 }
 #ca_r {
-  width: 20rem;
+  width: 15rem;
   height: 2rem;
   margin-left: 2.2rem;
   outline: none;
@@ -126,7 +135,7 @@ label {
   border-radius: 0.8rem;
 }
 #ca_r1 {
-  width: 20rem;
+  width: 15rem;
   height: 2rem;
   margin-left: 1.5rem;
   outline: none;
@@ -144,23 +153,23 @@ label {
   border-radius: 0.8rem;
 }
 #ca_r3 {
-  width: 20rem;
+  width: 15rem;
   height: 2rem;
-  margin-left: 1.5rem;
+  margin-left: 2.2rem;
   outline: none;
   font-weight: bold;
   font-size: 15px;
   border-radius: 0.8rem;
 }
 #hello4 {
-  margin-top: 3rem;
-  margin-left: 2.5rem;
-  height: 3rem;
+  margin-top: 2rem;
+  margin-left: 4.5rem;
+  height: 2rem;
   width: 10rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border: 2px solid rgba(0, 0, 0, 0.2);
   font-weight: bold;
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   border-right: 5px solid black;
   border-bottom: 5px solid black;
   border-top: 2px solid black;
@@ -168,20 +177,23 @@ label {
   cursor: pointer;
   transition: 0.5s;
 }
+
 #hello4:hover {
   transform: scale(1.05);
   transition: 0.5s;
+  background-color:green;
+  color: white;
 }
 
 #hello5 {
-  margin-top: 3rem;
-  margin-left: 5rem;
-  height: 3rem;
+  margin-top: 1rem;
+  margin-left: 4.5rem;
+   height: 2rem;
   width: 10rem;
-  font-size: 1.5rem;
+  font-size:1rem;
   border: 2px solid rgba(0, 0, 0, 0.2);
   font-weight: bold;
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   border-right: 5px solid black;
   border-bottom: 5px solid black;
   border-top: 2px solid black;
@@ -192,10 +204,13 @@ label {
 #hello5:hover {
   transform: scale(1.05);
   transition: 0.5s;
+  background-color:red;
+  color: white;
 }
 
 .l_1 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 .l_2 {
   margin-bottom: 1rem;

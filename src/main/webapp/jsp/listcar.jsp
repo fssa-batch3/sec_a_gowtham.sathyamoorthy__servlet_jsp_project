@@ -9,7 +9,7 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <h1>Turbo_trip</h1>
-<a href="GetAllCarListServlet">Get all Car Details</a><br>
+<a href="<%=request.getContextPath()%>/GetAllCarListServlet">Get all Car Details</a><br>
 <a href="LogoutServlet">logout</a><br>
 </body>
 </html>
