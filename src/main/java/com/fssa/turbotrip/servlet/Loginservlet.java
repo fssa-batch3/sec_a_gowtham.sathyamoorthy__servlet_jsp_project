@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.fssa.turbotrip.dao.UserDAO;
+import com.fssa.turbotrip.dao.exception.DAOException;
 import com.fssa.turbotrip.model.User;
 import com.fssa.turbotrip.service.UserService;
 import com.fssa.turbotrip.service.exception.ServiceException;
@@ -44,8 +46,20 @@ public class Loginservlet extends HttpServlet {
 				out.println("Login Successfull...");
 				HttpSession session = request.getSession();
 				session.setAttribute("loggedInEmail", email);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/homepage.jsp");
-				dispatcher.forward(request, response);
+				try {
+				    String type = UserDAO.findTypeBylicenseNumber(email);
+
+				    if ("0".equals(type)) { // Compare type as a string
+				        response.sendRedirect(request.getContextPath() + "/jsp/homepage.jsp");
+				    } else {
+				        response.sendRedirect(request.getContextPath() + "/jsp/Createcar.jsp");
+				    }
+				} catch (DAOException e) {
+				    // Handle the exception (e.g., log it or show an error message)
+				    e.printStackTrace();
+				}
+
+			
 			}
 
 			else {

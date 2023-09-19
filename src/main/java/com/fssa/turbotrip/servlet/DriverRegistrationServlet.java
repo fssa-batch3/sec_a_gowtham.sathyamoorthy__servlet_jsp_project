@@ -31,40 +31,33 @@ public class DriverRegistrationServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		String password = request.getParameter("password");
-
-
-		
-
+        String license_number = request.getParameter("license");
 		PrintWriter out = response.getWriter();
-		User user1 = new User(name, email,phone, password, 0, true);
-		Driver driver = new Driver( 987654321234L, null, 2);
-		UserService userService = new UserService();
-		DriverService driverService = new DriverService();
+		out.print("post");
+		User user1 = new User(name, email, phone, password, 0,license_number );
+		DriverService userService = new DriverService();
+
 		try {
 			if (userService.registerUser(user1)) {
-				out.println("Driver Registration successful!");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("driver_login.jsp");
+				System.out.println("Registration successful!");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/loggin.jsp");
 				dispatcher.forward(request, response);
-				out.println("Driver Registration failed!");
-
-			} else {
-				out.print("failed");
 			}
+
 		} catch (ServiceException e) {
-			
-			out.print("Invalid Details");
 
-			((PrintWriter) response).print("driver_register.jsp? Invalid login Credentials");
+			request.setAttribute("name", name);
+			request.setAttribute("email", email);
+			request.setAttribute("phone", phone);
+			request.setAttribute("password", password);
+			System.out.println("Registration unsuccessful!");
+			request.setAttribute("errorMessage", "Create Register Failed: " + e.getMessage());
+			request.getRequestDispatcher("jsp/register.jsp").forward(request, response);
 
-			out.println(e.getMessage());
-
-			out.println("Driver Registration failed!");
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("register.jsp");
-//			dispatcher.forward(request, response);
-
-		} 
+		}
 
 	}
+
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

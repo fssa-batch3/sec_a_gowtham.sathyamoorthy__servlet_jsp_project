@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Driver Registration Form</h1>
-	<form action="DriverRegistrationServlet" method="post">
+	<form action="<%=request.getContextPath()%>/DriverRegistrationServlet" method="post">
 		<label for="name">User name:</label> <input type="text" id="name"
 			name="name" required><br>
 		<br> <label for="email">Email:</label> <input type="email"
@@ -16,7 +16,10 @@
 			<br> <label for="phone">Phone:</label> <input type="phone"
 			id="phone" name="phone" required><br>
 		<br> <label for="password">Password:</label> <input
-			type="password" id="password" name="password" required><br>
+			type="password" id="password" name="password" required><br><br>
+			<label for="password">license number</label> <input
+			type="text" id="password" name="license" required><br>
+			
 		<br> <input type="submit" value="Register">
 	</form>
 </body>

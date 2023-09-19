@@ -9,9 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fssa.turbotrip.model.Car;
 import com.fssa.turbotrip.service.CarService;
+import com.fssa.turbotrip.service.DriverService;
 import com.fssa.turbotrip.service.exception.ServiceException;
 
 /**
@@ -23,13 +25,22 @@ public class CarRegisterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		HttpSession session = request.getSession();
+		 String userEmail = (String) session.getAttribute("loggedInEmail");
+		 int userId = 0;
+		    DriverService service = new DriverService();
+		    try {
+				userId = service.findIdByEmail(userEmail);
+			} catch (ServiceException e) {
+			
+				e.printStackTrace();
+			}
 		String Image = request.getParameter("ca_r");
 		String reg_no = request.getParameter("ca_r1");
 		String Model = request.getParameter("ca_r2");
 		String Description = request.getParameter("ca_r3");
 		PrintWriter out = response.getWriter();
-		Car car = new Car(1,reg_no,Model,Image,Description);
+		Car car = new Car(userId,reg_no,Model,Image,Description);
 		CarService carService = new CarService();
 
 		try {

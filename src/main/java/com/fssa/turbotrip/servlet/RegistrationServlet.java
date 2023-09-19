@@ -33,7 +33,7 @@ public class RegistrationServlet extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		out.print("post");
-		User user1 = new User(name, email, phone, password, 0, false);
+		User user1 = new User(name, email, phone, password, 0, "0");
 		UserService userService = new UserService();
 
 		try {

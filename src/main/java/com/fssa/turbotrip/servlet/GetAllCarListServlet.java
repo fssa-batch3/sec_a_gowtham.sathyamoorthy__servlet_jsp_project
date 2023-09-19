@@ -25,9 +25,15 @@ public class GetAllCarListServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Car> cars = null;
+		
+		HttpSession session = request.getSession(false);
+		String loggedInEmail = (String) session.getAttribute("loggedInEmail");
+
+List<Car> cars = null;
 		CarService carservice = new CarService();
 		try {
+			int id = carservice.findIdByEmail(loggedInEmail);
+
 			cars = carservice.getAllCarlists();
 			HttpSession session = request.getSession();
 			session.setAttribute("cars", cars);
