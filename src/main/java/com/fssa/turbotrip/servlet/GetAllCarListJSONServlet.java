@@ -27,7 +27,8 @@ public class GetAllCarListJSONServlet extends HttpServlet {
 		List<Car> cars = null;
 		CarService carservice = new CarService();
 		try {
-			cars = carservice.getAllCarlists();
+			int id = 2;
+			cars = carservice.getAllCarlists(id);
 			
 		}catch(ServiceException e) {
 			e.printStackTrace();

@@ -1,48 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+<html>
+<head>
+<meta charset="ISO-8859-1">
+   <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../assets/css/drive with us.css" />
-    <title>Driver</title>
-  </head>
-  <body>
-    <nav id="js_header">
-      <!-- header part -->
-      <div class="logo">
-        <img src="../assets/images/Turbo trip.png" alt="logo" />
-      </div>
-      <ul class="snip1143">
-        <li class="current"><a href="#" data-hover="Home">Home</a></li>
-        <li>
-          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
-        </li>
-        <li class="notification-li">
-          <a href="../pages/dri_notify.html" data-hover="Notification"
-            >Notification</a
-          >
-        </li>
-        <li>
-          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
-        </li>
-      </ul>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/drive with us.css" />
+<title>Insert title here</title>
+</head>
+<body>
 
-      <div class="user_profile">
-        <a href="../pages/dri_profile.html">
-          <img
-            src="../assets/images/gpro.png"
-            alt="use_pro"
-            class="user_profile1"
-        /></a>
-      </div>
-    </nav>
+    <jsp:include page="header.jsp"></jsp:include>
     <section>
       <div
         id="carouselExampleIndicators"
@@ -62,13 +35,13 @@
           <div class="carousel-item active">
             <img
               class="d-block w-100 img-slide"
-              src="../assets/blog-organization-can-benefit-immensely-from-car-leasing-companies.jpeg"
+              src="<%=request.getContextPath()%>/assets/blog-organization-can-benefit-immensely-from-car-leasing-companies.jpeg"
               alt="First slide"
             />
           </div>
           <div class="carousel-item">
             <img
-              src="../assets/blog-organization-can-benefit-immensely-from-car-leasing-companies.jpeg"
+              src="<%=request.getContextPath()%>/assets/blog-organization-can-benefit-immensely-from-car-leasing-companies.jpeg"
               alt="..."
             />
             <div class="carousel-caption d-none d-md-block">
@@ -79,7 +52,7 @@
           <div class="carousel-item">
             <img
               class="d-block w-100 img-slide"
-              src="../assets/drive.jpg"
+              src="<%=request.getContextPath()%>/assets/drive.jpg"
               alt="Third slide"
             />
           </div>
@@ -113,18 +86,18 @@
       <div class="partner_1">
         <div class="p_2">
           <img
-            src="../assets/images/part-2.jpg"
+            src="<%=request.getContextPath()%>/assets/images/part-2.jpg"
             alt="car_giver"
             class="giver"
           />
           <p class="part_2">Join Turbo-Trip as a</p>
           <h2 class="part_3">Partner with a Car</h2>
-          <a href="../pages/cars_list.html" class="form_btn">Attach my Car</a>
+          <a href="<%=request.getContextPath()%>/jsp/Createcar.jsp" class="form_btn">Attach my Car</a>
         </div>
 
         <div class="p_2">
           <img
-            src="../assets/images/partner.png"
+            src="<%=request.getContextPath()%>/assets/images/partner.png"
             alt="car_giver1"
             class="giver1"
           />
@@ -135,7 +108,7 @@
 
         <div class="p_2">
           <img
-            src="../assets/images/charismatic-man-smile-his-face-car-dealership-dreams-buying-new-243290471.jpg"
+            src="<%=request.getContextPath()%>/assets/images/charismatic-man-smile-his-face-car-dealership-dreams-buying-new-243290471.jpg"
             alt="car_giver2"
             class="giver2"
           />
@@ -157,41 +130,5 @@
         </div>
       </div>
     </section>
-
-    <script>
-      src = "https://code.jquery.com/jquery-3.2.1.slim.min.js";
-      integrity =
-        "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN";
-      crossorigin = "anonymous";
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../assets/js/nav.js"></script>
-    <script>
-      let notification = JSON.parse(localStorage.getItem("bookings"));
-
-      let notificationData = notification.filter((e) => e["isread"] == false);
-      console.log(notificationData);
-
-      let notificationLength = notificationData.length;
-
-      console.log(notificationLength);
-
-      if (notificationLength !== 0) {
-        let para = document.createElement("p");
-        para.innerHTML = notificationLength;
-        para.setAttribute("class", "notification-para");
-        document.querySelector(".notification-li").append(para);
-      }
-    </script>
-  </body>
+</body>
 </html>
-

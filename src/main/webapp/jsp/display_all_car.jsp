@@ -89,7 +89,7 @@
             <p><%= car.getDescription() %></p>
             <div class="btn-container">
                 <a href="jsp/UpdateCar1.jsp"><button class="btn update">Update</button></a>
-                <a href="DeleteCarServlet?id=<%= car.getCarId() %>"><button class="btn delete">Delete</button></a>
+                <a href="DeleteCarServlet?id=<%= car.getCarNo() %>"><button class="btn delete">Delete</button></a>
             </div>
         </div>
         <%

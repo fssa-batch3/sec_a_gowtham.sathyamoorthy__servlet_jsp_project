@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="../assets/css/style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.css" />
 <link
 	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 	rel="stylesheet" />
@@ -59,7 +59,7 @@
         <li><a class="nav-link" href="#"><%=loggedInEmail%></a>
 
 	</li>
-	<li><a class="nav-link" href="<%=request.getContextPath()%>/LogoutServlet" data-hover = "Logout">Logout</a>
+	<li><a class="nav-link" href="LogoutServlet" data-hover = "Logout">Logout</a>
 
 	</li>
 	
@@ -77,7 +77,6 @@
         /></a>
       </div>
     </nav>
-
 
 </body>
 </html>

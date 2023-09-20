@@ -52,7 +52,7 @@ public class Loginservlet extends HttpServlet {
 				    if ("0".equals(type)) { // Compare type as a string
 				        response.sendRedirect(request.getContextPath() + "/jsp/homepage.jsp");
 				    } else {
-				        response.sendRedirect(request.getContextPath() + "/jsp/Createcar.jsp");
+				        response.sendRedirect(request.getContextPath() + "/jsp/DriverHomepage.jsp");
 				    }
 				} catch (DAOException e) {
 				    // Handle the exception (e.g., log it or show an error message)

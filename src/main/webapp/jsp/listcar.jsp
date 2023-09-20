@@ -4,6 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/style.css" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+	rel="stylesheet" />
 <title>Insert title here</title>
 </head>
 <body>

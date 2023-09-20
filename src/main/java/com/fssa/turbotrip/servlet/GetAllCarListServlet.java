@@ -34,8 +34,7 @@ List<Car> cars = null;
 		try {
 			int id = carservice.findIdByEmail(loggedInEmail);
 
-			cars = carservice.getAllCarlists();
-			HttpSession session = request.getSession();
+			cars = carservice.getAllCarlists(id);
 			session.setAttribute("cars", cars);
 			
 			RequestDispatcher dispatcher =request.getRequestDispatcher("jsp/display_all_car.jsp");
