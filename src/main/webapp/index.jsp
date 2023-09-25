@@ -26,7 +26,7 @@
           </div>
           <div class="flip-card-back">
             <p class="title-3">Now you are <br />partner of us</p>
-            <a href="../pages/dri_login.html" class="title-4"
+            <a href="jsp/driver_register.jsp" class="title-4"
               ><p class="title-2">Click here !</p></a
             >
           </div>

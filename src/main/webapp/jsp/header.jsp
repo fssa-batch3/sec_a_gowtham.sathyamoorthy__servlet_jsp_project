@@ -24,7 +24,7 @@
 	<nav id="js_header">
 		<!-- header part -->
 		<div class="logo">
-			<img src="<%=request.getContextPath()%>/assets/turbostrip.png" alt="logo" />
+			<a href= "<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/assets/turbostrip.png" alt="logo" /></a>
 		</div>
 		<ul class="snip1143">
 			<li><a href="jsp/About us.jsp" data-hover="About Us">About
@@ -41,15 +41,15 @@
  <nav id="js_header">
       <!-- header part -->
       <div class="logo">
-        <img src="<%=request.getContextPath()%>/assets/turbostrip.png" alt="logo" />
+      <a href= "<%=request.getContextPath()%>/index.jsp">  <img src="<%=request.getContextPath()%>/assets/turbostrip.png" alt="logo" /></a>
       </div>
       <ul class="snip1143">
-        <li class="current"><a href="../index.html" data-hover="Home">Home</a></li>
+        <li class="current"><a href="<%=request.getContextPath()%>/homepage.jsp" data-hover="Home">Home</a></li>
         <li>
           <a href="jsp/About us.jsp" data-hover="About Us">About Us</a>
         </li>
         <li>
-          <a href="../pages/collapse.html" data-hover="Notification"
+          <a href="../ShowOtpServlet" data-hover="Notification"
             >Notification</a
           >
         </li>

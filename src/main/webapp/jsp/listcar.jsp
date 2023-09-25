@@ -11,10 +11,51 @@
 	rel="stylesheet" />
 <title>Insert title here</title>
 </head>
+<style>
+body{
+background-color:lightgray;
+}
+.car_card {
+      
+          background-image: url('../assets/images/backgroundforaddedcar.png');
+        background-size:center
+        ;
+        font-family: "Roboto", sans-serif;
+        height:750px;
+        width:950px;
+        margin-top:85px;
+       margin-left:280px;
+      }
+.butn{
+margin-top:370px;
+margin-left:180px;
+
+height: 40px;
+    width: 220px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor:pointer;
+
+}      
+      
+  .butn1{
+  margin-top: 50px;
+    margin-left: 180px;
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+  
+  }    
+      </style>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
-<h1>Turbo_trip</h1>
-<a href="<%=request.getContextPath()%>/GetAllCarListServlet">Get all Car Details</a><br>
-<a href="LogoutServlet">logout</a><br>
+<div class= car_card>
+ <jsp:include page="DriverHeader.jsp"></jsp:include>
+<a href="<%=request.getContextPath()%>/GetAllCarListServlet"><button class=butn>See your Car Details</button></a><br>
+<a href="Createcar.jsp"><button class= "butn1">Back</button></a><br>
+</div>
 </body>
 </html>

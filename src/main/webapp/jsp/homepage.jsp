@@ -54,7 +54,7 @@
         <h1>Share your daily commute with Carpool/Bikepool</h1>
         <br />
         <p class="sec1">Reduce Co2 . Save Money . Grow network</p>
-        <a href="../pages/carpool.html"
+        <a href="carpool.jsp"
           ><button class="btn">Book now !</button></a
         >
       </div>

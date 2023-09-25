@@ -106,9 +106,9 @@ nav {
 .list_1 {
   width: 23rem;
   margin-left: 69rem;
-  height: 25rem;
+  height: 27rem;
   padding: 2rem;
-  margin-top: 15rem;
+  margin-top: 13rem;
   border: 2px solid black;
   border-radius: 15px;
   background-color: rgba(151, 151, 151, 0.9);
@@ -209,10 +209,11 @@ font-size: 1.3rem;
 }
 
 .l_1 {
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .l_2 {
+	margin-top:1rem;
   margin-bottom: 1rem;
 }
 .l_3 {

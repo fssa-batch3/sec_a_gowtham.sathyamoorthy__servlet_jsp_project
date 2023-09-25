@@ -50,7 +50,7 @@ th {
 			<td><%=user.getEmail()%></td>
 			<td><%=user.getPhone()%></td>
 			<td><%=user.getIsdeleted()%></td>
-			<td><%=user.getIsdriver()%></td>
+			
 		</tr>
 
 		<%

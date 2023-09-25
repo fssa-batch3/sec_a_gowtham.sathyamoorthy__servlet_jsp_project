@@ -39,10 +39,11 @@ public class UpdateCarServlet extends HttpServlet {
             if (isUpdated) {
                 response.sendRedirect("GetAllCarListServlet"); // Redirect to a success page
             } else {
-                response.sendRedirect("jsp/UpdateCar.jsp"); // Redirect to an error page
+                response.sendRedirect("jsp/UpdateCar1.jsp"); // Redirect to an error page
             }
         } catch (ServiceException | InvalidCarException | DAOException e) {
-            response.sendRedirect("error.jsp"); // Redirect to an error page in case of exceptions
+        	System.out.println(e.getMessage());
+        	response.sendRedirect(request.getContextPath() + "/jsp/UpdateCar1.jsp?errorMessage=" + e.getMessage()); // Redirect to an error page in case of exceptions
         }
     }
 }

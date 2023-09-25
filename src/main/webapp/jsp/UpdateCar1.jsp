@@ -8,31 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<nav id="js_header">
-		<!-- header part -->
-		<div class="logo">
-			<img src="../assets/images/Turbo trip.png" alt="logo" />
-		</div>
-		<ul class="snip1143">
-			<li class="current"><a href="#" data-hover="Home">Home</a></li>
-			<li><a href="../pages/About us.html" data-hover="About Us">About
-					Us</a></li>
-			<li><a href="../pages/dri_notify.html" data-hover="Notification">Notification</a>
-			</li>
-			<li><a href="../pages/contact us.html" data-hover="Contact">Contact</a>
-			</li>
-		</ul>
-
-		<div class="user_profile">
-			<a href="../pages/dri_profile.html"> <img
-				src="../assets/images/gpro.png" alt="use_pro" class="user_profile1" /></a>
-		</div>
-	</nav>
+	 <jsp:include page="DriverHeader.jsp"></jsp:include>
 	<div class="list_1">
 		<form method="post"
-			action="<%=request.getContextPath()%>/UpdateCarServlet"
+				action="<%=request.getContextPath()%>/UpdateCarServlet"
 			id="cars_detail">
 			<h1>Change Your Car details here :</h1>
+			<%
+			String errorMessage = request.getParameter("errorMessage");
+			if (errorMessage != null) {
+				out.println("<p>" + errorMessage + "</p>");
+			}
+			%>
 			 <div class="l_2">
           <label>Car-Reg-No:</label>
           <input
@@ -52,11 +39,29 @@
 				<input type="text" id="ca_r3" name="description" required
 					 /><br />
 			</div>
-			<div class="btn">
+			<div class="btn1">
 				<input type="submit" value="Update Car" id="hello4" /> <input
 					type="submit" value="Delete" id="hello5" />
 			</div>
 		</form>
 	</div>
+	<script>
+	 const updateButton = document.getElementById("hello4");
+
+	    // Add a click event listener to the button
+	    updateButton.addEventListener("click", function () {
+	        // Display a confirmation dialog and store the result in a variable
+	        const confirmation = confirm("Are you sure you want to update your car details?");
+
+	        // Check the result of the confirmation dialog
+	        if (confirmation) {
+	            // The user clicked "OK," so proceed with the update
+	            alert("Car details updated!");
+	        } else {
+	            
+	        }
+	    });
+	
+	</script>
 </body>
 </html>

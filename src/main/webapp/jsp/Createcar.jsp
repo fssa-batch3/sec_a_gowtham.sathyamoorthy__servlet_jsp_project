@@ -30,22 +30,29 @@
 
 			<div class="user_profile">
 				<a href="../pages/dri_profile.html"> <img
-					src="../assets/images/gpro.png" alt="use_pro" class="user_profile1" /></a>
+					src="<%=request.getContextPath()%>/assets/gpro.png" alt="use_pro"
+					class="user_profile1" /></a>
 			</div>
 		</header>
 	</nav>
 
+
 	<div class="list_1">
-		<form action="../CarRegister" method="post" id="cars_detail">
+		<form action="<%=request.getContextPath()%>/CarRegister" method="post"
+			id="cars_detail">
+			<%
+			String errorMessage = request.getParameter("errorMessage");
+			if (errorMessage != null) {
+				out.println("<p>" + errorMessage + "</p>");
+			}
+			%>
 			<div class="l_1">
 				<label>Car-Image:</label> <input type="url" id="ca_r" name="ca_r"
 					required /><br />
 			</div>
 			<div class="l_2">
 				<label>Car-Reg-No:</label> <input type="text" id="ca_r1"
-					name="ca_r1"
-					
-					placeholder="Tn 07 bd 1234" required /><br />
+					name="ca_r1" placeholder="Tn 07 bd 1234" required /><br />
 			</div>
 			<div class="l_3">
 				<label>Car-Model:</label> <input type="text" id="ca_r2" name="ca_r2"
@@ -53,7 +60,7 @@
 			</div>
 			<div class="l_4">
 				<label>Car-Details: </label> <input type="text" id="ca_r3"
-					name="ca_r3" pattern="[A-Za-z ]{1,20}" required /><br />
+					name="ca_r3" required /><br />
 			</div>
 			<input type="submit" id="ca_r4" />
 		</form>

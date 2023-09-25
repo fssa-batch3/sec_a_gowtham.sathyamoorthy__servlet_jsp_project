@@ -41,6 +41,9 @@ public class DeleteCarServlet extends HttpServlet {
 		CarService carService = new CarService();
 		try {
 			carService.deleteCar(no, isDeleted);
+			String servletPath = request.getContextPath() + "/GetAllCarListServlet";
+		    response.sendRedirect(servletPath);
+//			"<%=request.getContextPath()%>/GetAllCarListServlet">
 		} catch (DAOException | ServiceException e) {
 			e.printStackTrace();
 		} 

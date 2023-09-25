@@ -56,6 +56,8 @@ public class CarRegisterServlet extends HttpServlet {
 		} catch (ServiceException e) {
 			e.printStackTrace();
 			out.println(e.getMessage());
+			response.sendRedirect(request.getContextPath() + "/jsp/Createcar.jsp?errorMessage=" + e.getMessage());
+
 			}
 		} 
 

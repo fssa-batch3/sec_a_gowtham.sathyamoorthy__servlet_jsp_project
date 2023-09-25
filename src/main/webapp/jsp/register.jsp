@@ -126,7 +126,7 @@ input[type="submit"]:hover, a button:hover {
 		</div>
 	</form>
 	<div class="pass">
-		<a href="loggin.jsp"><button onclick="login()">Login</button></a>
+		<a href="<%=request.getContextPath()%>/jsp/loggin.jsp"><button onclick="login()">Login</button></a>
 	</div>
 
 </body>

@@ -1,14 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <%@ page import="java.util.*"%>
 <%@ page import="com.fssa.turbotrip.model.*"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
 <style>
 body {
 	font-family: Arial, sans-serif;
@@ -75,70 +73,53 @@ body {
 </style>
 </head>
 <body>
-	<h1>All Attached CarList</h1>
-
-
-	
+	<h1>New Arrivals!!!</h1>
 	<div class="container">
 		<%
-		List<Car> cars = (List<Car>) session.getAttribute("cars");
-		if (cars != null) {
-			for (Car car : cars) {
+		List<Booking> book = (List<Booking>) session.getAttribute("book");
+		if (book != null) {
+			for (Booking booking : book) {
 		%>
+
 		<div class="card">
-			<img src="<%=car.getCarImage()%>" alt="Car Image">
-			<h2><%=car.getCarmodel()%></h2>
+
+			<h2>
+				Pickup :<%=booking.getPickup_location()%></h2>
+			<h2>
+				Destination :<%=booking.getDrop_location()%></h2>
 			<p>
-				User ID:
-				<%=car.getUserId()%></p>
+				Time :<%=booking.getBooking_time()%></p>
 			<p>
-				Car Registration:
-				<%=car.getCarNo()%></p>
-			<p><%=car.getDescription()%></p>
+				Date :<%=booking.getBooking_date()%></p>
+			<p>
+				No.of.Seats :<%=booking.getNo_of_seat()%></p>
 			<div class="btn-container">
-				<a href="jsp/UpdateCar1.jsp"><button class="btn update">Update</button></a>
-				<a href="javascript:void(0);" onclick="confirmDelete('<%=car.getCarNo()%>')">
-    <button class="btn delete">Delete</button>
-</a>
+				<a href="AcceptBookingServlet?id=<%=booking.getBooking_id()%>">
+					<button class="btn update">Accept</button>
+				</a> <a href="javascript:void(0);" onclick="confirmDelete())">
+					<button class="btn delete">Cancel</button>
+				</a>
 			</div>
 		</div>
 		<%
 		}
 		} else {
 		%>
-		<p>No cars available.</p>
+		<p>No Bookings available.</p>
 		<%
 		}
 		%>
 	</div>
-
-
-
-
-<script>
+	<script>
 function confirmDelete(carNo) {
-    if (confirm("Are you sure you want to delete Car #" + carNo + "?")) {
+    if (confirm("Are you sure you want to Cancel the ride +"?")) {
         
-        window.location.href = "DeleteCarServlet?id=" + carNo;
+        window.location.href = "#";
     } else {
         
     }
 }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
+
 </html>
