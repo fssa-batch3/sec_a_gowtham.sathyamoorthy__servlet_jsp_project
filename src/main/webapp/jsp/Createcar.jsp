@@ -11,30 +11,7 @@
 <title>Document</title>
 </head>
 <body>
-	<nav id="js_header">
-		<header>
-			<!-- header part -->
-			<div class="logo">
-				<img src="../assets/images/Turbo trip.png" alt="logo" />
-			</div>
-			<ul class="snip1143">
-				<li class="current"><a href="../pages/drive_with_us.html"
-					data-hover="Home">Home</a></li>
-				<li><a href="../pages/About us.html" data-hover="About Us">About
-						Us</a></li>
-				<li><a href="../pages/dri_notify.html"
-					data-hover="Notification">Notification</a></li>
-				<li><a href="../pages/contact us.html" data-hover="Contact">Contact</a>
-				</li>
-			</ul>
-
-			<div class="user_profile">
-				<a href="../pages/dri_profile.html"> <img
-					src="<%=request.getContextPath()%>/assets/gpro.png" alt="use_pro"
-					class="user_profile1" /></a>
-			</div>
-		</header>
-	</nav>
+	   <jsp:include page="DriverHeader.jsp"></jsp:include>
 
 
 	<div class="list_1">

@@ -15,6 +15,7 @@ User user = (User) pageContext.getAttribute("user");
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <title>OTP Verification</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.css" />
 <style>
 /* Card container */
 .card {
@@ -58,28 +59,50 @@ User user = (User) pageContext.getAttribute("user");
 	max-width: 300px;
 }
 
-.card h2 {
-	font-size: 18px;
+.h2 {
+	font-size: 35px;
 	margin: 0;
+	margin-left:20px;
 }
 
 .card p {
-	font-size: 14px;
+	font-size: 18px;
 	margin: 5px 0;
+	margin-top:20px;
+margin-bottom:20px;
 }
 
 .cards {
 	display: flex;
+	margin-top:150px;
+	margin-left:250px
 }
+.dis{
+  background-image: url('<%=request.getContextPath()%>/assets/images/Confirmed-bro.png');
+    background-size: cover; /* or 'contain', depending on your preference */
+    
+   
+background-position: center center;
+
+        height: 500px;
+        width: 600px;
+}
+
 </style>
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
+
+
 	<div class="cards">
+	<div class = "dis">
+<h2 class ="h2">OTP Verification And Driver details</h2>
+</div>
 		<div class="card center-text">
-			<h2>OTP Verification And Driver details</h2>
+			
 
 <c:if test="${not empty driver}">
-        <p>Driver Name: ${driver.username}</p>
+        <p class="paragraph">Driver Name: ${driver.username}</p>
         <p>Driver Email: ${driver.email}</p>
         <p>Driver Contact no :${driver.phone}</p>
         
@@ -96,5 +119,6 @@ User user = (User) pageContext.getAttribute("user");
 			</c:choose>
 		</div>
 	</div>
+
 </body>
 </html>

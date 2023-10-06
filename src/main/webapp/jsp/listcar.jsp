@@ -17,7 +17,7 @@ background-color:lightgray;
 }
 .car_card {
       
-          background-image: url('../assets/images/backgroundforaddedcar.png');
+          background-image: url('<%=request.getContextPath()%>/assets/images/backgroundforaddedcar.png');
         background-size:center
         ;
         font-family: "Roboto", sans-serif;

@@ -8,37 +8,7 @@
     <title>About us</title>
   </head>
   <body>
-
-     <nav id="js_header">
-      <!-- header part -->
-      <div class="logo">
-        <img src="../assets/turbostrip.png "alt="logo" />
-      </div>
-      <ul class="snip1143">
-        <li class="current"><a href="../index.jsp" data-hover="Home">Home</a></li>
-        <li>
-          <a href="../pages/About us.html" data-hover="About Us">About Us</a>
-        </li>
-        <li>
-          <a href="../pages/collapse.html" data-hover="Notification"
-            >Notification</a
-          >
-        </li>
-        <li>
-          <a href="../pages/contact us.html" data-hover="Contact">Contact</a>
-        </li>
-      </ul>
-
-      <div class="user_profile">
-        <a href="./profilepage-1.html">
-          <img
-            src="../assets/images/gpro.png"
-            alt="use_pro"
-            class="user_profile1"
-        /></a>
-      </div>
-    </nav>
-    
+<jsp:include page="Basicheader.jsp"></jsp:include>
     <div class="about">
       <h6 id="h6">
         Our Mission is to remove 1 Million Cars from the Roads, Everyday

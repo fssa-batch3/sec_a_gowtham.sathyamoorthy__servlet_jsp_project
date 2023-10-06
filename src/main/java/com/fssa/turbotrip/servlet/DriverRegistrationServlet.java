@@ -50,9 +50,10 @@ public class DriverRegistrationServlet extends HttpServlet {
 			request.setAttribute("email", email);
 			request.setAttribute("phone", phone);
 			request.setAttribute("password", password);
+			request.setAttribute("license", license_number);
 			System.out.println("Registration unsuccessful!");
 			request.setAttribute("errorMessage", "Create Register Failed: " + e.getMessage());
-			request.getRequestDispatcher("jsp/register.jsp").forward(request, response);
+			request.getRequestDispatcher("jsp/driver_register.jsp").forward(request, response);
 
 		}
 
