@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div class="section">
+    <div class="section1">
       <h1>Our story</h1>
       <p class="story">Started in 2020 , by Settu Foundation</p>
       <p class="story-1">

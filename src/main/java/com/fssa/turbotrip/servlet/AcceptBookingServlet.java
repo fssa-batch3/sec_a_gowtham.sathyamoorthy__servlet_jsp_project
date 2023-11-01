@@ -61,13 +61,13 @@ public class AcceptBookingServlet extends HttpServlet {
         // Define the characters to include in the OTP
         String characters = "0123456789";
 
-        // Initialize a random number generator
+        
         Random random = new Random();
 
-        // Create a StringBuilder to store the OTP
+       
         StringBuilder otp = new StringBuilder();
 
-        // Generate random digits and append them to the OTP
+       
         for (int i = 0; i < length; i++) {
             int index = random.nextInt(characters.length());
             char digit = characters.charAt(index);

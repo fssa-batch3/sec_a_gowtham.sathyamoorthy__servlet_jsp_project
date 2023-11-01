@@ -26,11 +26,11 @@
 		<div class="logo">
 			<a href ="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/assets/turbostrip.png" alt="logo" /></a>
 		</div>
-		<ul class="snip1143">
-			<li><a href="jsp/About us.jsp" data-hover="About Us">About
+		<ul class="snip">
+			<li><a href="<%=request.getContextPath()%>/jsp/AboutUs.jsp" data-hover="About Us">About
 					Us</a></li>
 
-			<li><a href="jsp/contact us.jsp" data-hover="Contact">Contact</a>
+			<li><a href="<%=request.getContextPath()%>jsp/contact us.jsp" data-hover="Contact">Contact</a>
 			</li>
 		</ul>
 	</nav>
@@ -43,7 +43,7 @@
       <div class="logo">
       <a href ="<%=request.getContextPath()%>/index.jsp">  <img src="<%=request.getContextPath()%>/assets/turbostrip.png" alt="logo" /></a>
       </div>
-      <ul class="snip1143">
+      <ul class="snip">
         <li class="current"><a href="<%=request.getContextPath()%>/jsp/DriverHomepage.jsp" data-hover="Home">Home</a></li>
         <li>
           <a href="<%=request.getContextPath()%>/jsp/AboutUs.jsp" data-hover="About Us">About Us</a>
@@ -56,10 +56,8 @@
         <li>
           <a href="<%=request.getContextPath()%>/jsp/contact us.jsp" data-hover="Contact">Contact</a>
         </li>
-        <li>
-    <a class="nav-link" href="#" data-hover="<%=loggedInEmail%>"><%=loggedInEmail%></a>
-</li>
-	</li>
+       
+	
 	<li><a class="nav-link" href="<%=request.getContextPath()%>/LogoutServlet" data-hover = "Logout">Logout</a>
 
 	</li>

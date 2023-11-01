@@ -37,8 +37,11 @@ public class UpdateCarServlet extends HttpServlet {
         try {
             boolean isUpdated = carService.updateCar(updatedCar, carNo);
             if (isUpdated) {
+            	System.out.print("yes in update car servlet");
                 response.sendRedirect("GetAllCarListServlet"); // Redirect to a success page
             } else {
+            	System.out.print("no in update car servlet");
+
                 response.sendRedirect("jsp/UpdateCar1.jsp"); // Redirect to an error page
             }
         } catch (ServiceException | InvalidCarException | DAOException e) {

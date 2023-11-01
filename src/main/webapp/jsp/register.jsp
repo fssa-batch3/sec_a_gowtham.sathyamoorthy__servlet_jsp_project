@@ -22,7 +22,7 @@ form {
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 	background-color: #f9f9f9;
 	margin-top: 180px;
-	margin-left:150px;
+	margin-left: 150px;
 }
 
 label {
@@ -72,8 +72,7 @@ br {
 h1 {
 	text-align: center;
 	color: #333;
-	margin-top:100px;
-	
+	margin-top: 100px;
 }
 
 a {
@@ -123,53 +122,110 @@ input[type="submit"]:hover, a button:hover {
 
 .para {
 	margin-left: 655px;
+}
 
+.users {
+	display: flex;
 }
-.users{
-display:flex;
-}
-.user3{
-height:600px;
-width:650px;
 
+.user3 {
+	height: 600px;
+	width: 650px;
 }
+
+.snip * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0 1.5em;
+  overflow: hidden;
+}
+.snip a {
+  padding: 0.3em 0;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+  margin: 0;
+  text-decoration: none;
+}
+.snip a:before,
+.snip a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip a:before {
+  top: 100%;
+  display: block;
+  height: 3px;
+  width: 100%;
+  content: "";
+  background-color: #cfcccc;
+}
+.snip a:after {
+  padding: 0.3em 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  content: attr(data-hover);
+  color: white;
+  white-space: nowrap;
+}
+.snip li:hover a,
+.snip .current a {
+  transform: translateY(-100%);
+}
+.navbar {
+  /* margin-right: 50px; */
+  padding-right: 40px;
+}
+
 </style>
 <body>
 
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class=users>
-	<div class = user1>
-	<h1>User Registration Form</h1>
-	<img src = "<%=request.getContextPath()%>/assets/images/user_img.jpg" class ="user3">
-	</div>
-	<div class=user2>
-	<form action="<%=request.getContextPath()%>/register" method="post">
-		<label for="name">User name:</label> <input type="text" id="name"
-			name="name" value="${name}" required><br> <br> <label
-			for="email">Email:</label> <input type="email" id="email"
-			name="email" value="${email}" required><br> <br> <label
-			for="phone">Phone:</label> <input type="tel" id="phone" name="phone"
-			value="${phone}" required><br> <br> <label
-			for="password">Password:</label> <input type="password" id="password"
-			name="password" value="${password}" required><br>
-		<div class="pass">
-			<input type="submit" value="Register">
-	
+		<div class=user1>
+			<h1>User Registration Form</h1>
+			<img src="<%=request.getContextPath()%>/assets/images/user_img.jpg"
+				class="user3">
 		</div>
+		<div class=user2>
+			<form action="<%=request.getContextPath()%>/register" method="post">
+				<label for="name">User name:</label> <input type="text" id="name"
+					name="name" value="${name}" required><br> <br> <label
+					for="email">Email:</label> <input type="email" id="email"
+					name="email" value="${email}" required><br> <br>
+				<label for="phone">Phone:</label> <input type="tel" id="phone"
+					name="phone" value="${phone}" required><br> <br>
+				<label for="password">Password:</label> <input type="password"
+					id="password" name="password" value="${password}" required><br>
+				<label for="password"> Confrim Password:</label> <input
+					type="password" id="password" name="passwords" value="${password}"
+					required><br>
+				<div class="pass">
+					<input type="submit" value="Register">
+
+				</div>
 		</div>
 		<%
-	String errorMessage = (String) request.getAttribute("errorMessage");
-	if (errorMessage != null) {
-	%>
-	<p class='error'><%=errorMessage%></p>
-	<%
-	}
-	%>
-	</form>
+		String errorMessage = (String) request.getAttribute("errorMessage");
+		if (errorMessage != null) {
+		%>
+		<p class='error'><%=errorMessage%></p>
+		<%
+		}
+		%>
+		</form>
 	</div>
-	
+
 	<small><p class="para">
-			If you already sign in! Please <a href="loggin.jsp">login..</a>
+			If you already sign in! Please <a href="<%=request.getContextPath()%>/jsp/loggin.jsp">login..</a>
 		</p></small>
 
 </body>

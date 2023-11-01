@@ -26,37 +26,45 @@ public class DriverRegistrationServlet extends HttpServlet {
        
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String name = request.getParameter("name");
-		String email = request.getParameter("email");
-		String phone = request.getParameter("phone");
-		String password = request.getParameter("password");
-        String license_number = request.getParameter("license");
-		PrintWriter out = response.getWriter();
-		out.print("post");
-		User user1 = new User(name, email, phone, password, 0,license_number );
-		DriverService userService = new DriverService();
+	        throws ServletException, IOException {
+	    String name = request.getParameter("name");
+	    String email = request.getParameter("email");
+	    String phone = request.getParameter("phone");
+	    String password = request.getParameter("password");
+	    String confirmPassword = request.getParameter("passwords"); // Change to confirmPassword
+	    String licenseNumber = request.getParameter("license"); // Added license number
+	    
+	    if (password.equals(confirmPassword)) {
+	       
+	        User user1 = new User(name, email, phone, password, 0, licenseNumber);
+	        DriverService userService = new DriverService();
 
-		try {
-			if (userService.registerUser(user1)) {
-				System.out.println("Registration successful!");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/loggin.jsp");
-				dispatcher.forward(request, response);
-			}
+	        try {
+	            if (userService.registerUser(user1)) {
+	                System.out.println("Registration successful!");
+	                RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/loggin.jsp");
+	                dispatcher.forward(request, response);
+	            }
 
-		} catch (ServiceException e) {
-
-			request.setAttribute("name", name);
-			request.setAttribute("email", email);
-			request.setAttribute("phone", phone);
-			request.setAttribute("password", password);
-			request.setAttribute("license", license_number);
-			System.out.println("Registration unsuccessful!");
-			request.setAttribute("errorMessage", "Create Register Failed: " + e.getMessage());
-			request.getRequestDispatcher("jsp/driver_register.jsp").forward(request, response);
-
-		}
-
+	        } catch (ServiceException e) {
+	            request.setAttribute("name", name);
+	            request.setAttribute("email", email);
+	            request.setAttribute("phone", phone);
+	            request.setAttribute("password", password);
+	            request.setAttribute("license", licenseNumber);
+	            System.out.println("Registration unsuccessful!");
+	            request.setAttribute("errorMessage", "Create Register Failed: " + e.getMessage());
+	            request.getRequestDispatcher("jsp/driver_register.jsp").forward(request, response);
+	        }
+	    } else {
+	       
+	        request.setAttribute("name", name);
+	        request.setAttribute("email", email);
+	        request.setAttribute("phone", phone);
+	        request.setAttribute("license", licenseNumber);
+	        request.setAttribute("errorMessage", "Passwords do not match.");
+	        request.getRequestDispatcher("jsp/driver_register.jsp").forward(request, response);
+	    }
 	}
 
 

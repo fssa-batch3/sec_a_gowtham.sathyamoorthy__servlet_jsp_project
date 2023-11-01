@@ -16,7 +16,7 @@ form {
   background-color: #fff;
   max-width: 400px;
   margin: 20px auto;
-  margin-top:70px;
+  margin-top:50px;
   margin-left:100px;
   padding: 20px;
   border-radius: 5px;
@@ -72,7 +72,7 @@ input[type="submit"]:hover {
 
 .para {
 	margin-left: 200px;
-	margin-top: 25px;
+	
 }
 .drivers1{
 
@@ -100,15 +100,17 @@ display: flex;
 	
 <h2>Driver Registration Form</h2>
 		<label for="name">User name :</label> <input type="text" id="name"
-			name="name" required><br>
+			name="name"  value="${name}" required><br>
 		<br> <label for="email">Email :</label> <input type="email"
-			id="email" name="email" required><br>
+			id="email" name="email" value="${email}" required><br>
 			<br> <label for="phone">Phone :</label> <input type="tel"
-			id="phone" name="phone" required><br>
+			id="phone" name="phone" value="${phone}" required><br>
 		<br> <label for="password">Password :</label> <input
-			type="password" id="password" name="password" required><br><br>
+			type="password" id="password" name="password" value="${password}" required><br><br>
+			<label for="password">Confrim Password :</label> <input
+			type="password" id="password" name="passwords" value="${passwords}" required><br>
 			<label for="password">license number :</label> <input
-			type="text" id="password" name="license" required><br>
+			type="text" id="password" name="license"  value="${license}" required><br>
 			
 		<br> <input type="submit" value="Register">
 		<%
@@ -121,7 +123,7 @@ display: flex;
 	%>
 	</form>
 	<small><p class="para">
-			If you already sign in! Please <a href="loggin.jsp">login..</a>
+			If you already sign in! Please <a href="<%=request.getContextPath()%>/jsp/loggin.jsp">login..</a>
 		</p></small>
 	</div>
 	</div>
