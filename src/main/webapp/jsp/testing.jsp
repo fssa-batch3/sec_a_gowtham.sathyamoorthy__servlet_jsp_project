@@ -67,6 +67,9 @@
 .can_1:hover {
 	transform: scale(1.1);
 	transition: 0.5s;
+	background-color: red;
+	color: white;
+	
 }
 
 .card {
@@ -155,7 +158,7 @@
 	try {
 		book = booking.findObjectByUserIds(loggedInuserId);
 		users = user.getUserById(book.getDriver_id());
-		System.out.println(book);
+		System.out.println(book.getBooking_id());
 		System.out.println(users);
 		otp = book.getOtp();
 
@@ -175,7 +178,7 @@
 				class="location" alt="loc" />
 			<h2 class="loc_3">Finding driver</h2>
 		</div>
-		<button class="can_1">Cancel</button>
+		<a href="<%=request.getContextPath()%>/cancelride?bookingid=<%= book.getBooking_id() %>" ><button type="submit" class="can_1">Cancel</button></a>
 	</div>
 
 

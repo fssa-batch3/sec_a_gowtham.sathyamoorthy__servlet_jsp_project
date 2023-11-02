@@ -45,6 +45,11 @@ public class VerifyOTPServlet extends HttpServlet {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/ConfrimBooking.jsp");
 				dispatcher.forward(request, response);
 			}
+			else {
+			    request.setAttribute("errorMessage", "OTP does not match. Please try again.");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/VerifyOtpindriver.jsp");
+				dispatcher.forward(request, response);
+			}
 			
 		} catch (ServiceException e) {
 			e.printStackTrace();

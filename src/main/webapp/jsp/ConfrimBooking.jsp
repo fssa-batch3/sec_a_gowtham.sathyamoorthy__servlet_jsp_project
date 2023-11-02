@@ -6,6 +6,25 @@
 <meta charset="ISO-8859-1">
  <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/confim.css" />
 <title>Insert title here</title>
+<style>
+.back{
+width:100px;
+height:40px;
+color:white;
+background-color:black;
+border-radius:50px;
+ transform: scale(1.1);
+  transition: 0.5s;
+  cursor:pointer;
+}
+.back:hover{
+ transform: scale(1.1);
+  transition: 0.5s;
+  background-color: white;
+  color: black;
+}
+</style>
+
 </head>
 <body>
 
@@ -39,7 +58,9 @@
       <div class="jonny">
         <div class="quick">
           Booking<br />
-          confrimed !
+          confirmed !
+          <div class = "black"> 
+        <a href="<%=request.getContextPath()%>/jsp/DriverHomepage.jsp"  ><button class = "back">Go Back</button></a></div>
         </div>
 </body>
 </html>

@@ -12,6 +12,11 @@
 	rel="stylesheet" />
 
 </head>
+<style>
+.h12{
+color:white;
+}
+</style>
 <body>
 	 
 
@@ -43,8 +48,9 @@
       <div class="logo">
       <a href= "<%=request.getContextPath()%>/index.jsp">  <img src="<%=request.getContextPath()%>/assets/turbostrip.png" alt="logo" /></a>
       </div>
+      <div class="head"><h1 class="h12">Turbo trip</h1></div>
       <ul class="snip">
-        <li class="current"><a href="<%=request.getContextPath()%>/homepage.jsp" data-hover="Home">Home</a></li>
+        <li class="current"><a href="<%=request.getContextPath()%>/jsp/homepage.jsp" data-hover="Home">Home</a></li>
         <li>
           <a href="<%=request.getContextPath()%>/jsp/AboutUs.jsp" data-hover="About Us">About Us</a>
         </li>
@@ -66,14 +72,7 @@
 		%>
       </ul>
 
-      <div class="user_profile">
-        <a href="./profilepage-1.html">
-          <img
-            src="<%=request.getContextPath()%>/assets/gpro.png"
-            alt="use_pro"
-            class="user_profile1"
-        /></a>
-      </div>
+      
     </nav>
 
 

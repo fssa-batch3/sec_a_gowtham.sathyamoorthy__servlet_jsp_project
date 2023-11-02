@@ -141,6 +141,13 @@ border: none;
 </style>
 </head>
 <body>
+    <% String errorMessage = (String) request.getAttribute("errorMessage"); %>
+<% if (errorMessage != null) { %>
+<script type="text/javascript">
+    alert("<%= errorMessage %>");
+</script>
+<% } %>
+
 	<jsp:include page="DriverHeader.jsp"></jsp:include>
 
 	<form action="<%=request.getContextPath()%>/VerifyOTPServlet"
@@ -175,4 +182,3 @@ border: none;
 	</c:if>
 </body>
 </html>
-

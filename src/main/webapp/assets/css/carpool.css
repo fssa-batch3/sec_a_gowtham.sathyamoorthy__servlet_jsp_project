@@ -185,6 +185,8 @@ nav {
 .find:hover {
   transform: scale(1.1);
   transition: 0.5s;
+   background-color: green;
+   color: white;
 }
 .car {
   width: 200px;
