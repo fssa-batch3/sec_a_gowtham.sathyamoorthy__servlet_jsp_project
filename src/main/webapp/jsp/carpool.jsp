@@ -145,18 +145,40 @@
     }
 
     const timeInput = document.getElementById("time");
-    // Add event listener to the time input
+  
     timeInput.addEventListener("input", function () {
       const selectedTime = this.value;
       const currentTime = new Date().toLocaleTimeString([], {
         hour: "2-digit",
         minute: "2-digit",
       });
-      // Compare selected time with current time
+     
       if (selectedTime < currentTime) {
         alert("You cannot select a past time.");
-        this.value = ""; // Clear the input value
+        this.value = ""; 
       }
     });
+   	
+    
+
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      const form = document.getElementById("get_address_information");
+
+      
+      form.addEventListener("submit", function (event) {
+      
+        const pickup = document.getElementById("pickup").value;
+        const drop = document.getElementById("drop").value;
+
+        if (pickup === drop) {
+        
+          event.preventDefault();
+        alert("Pickup and drop locations cannot be the same.");
+        }
+      });
+    });
+ 
+
   </script>
 </html>

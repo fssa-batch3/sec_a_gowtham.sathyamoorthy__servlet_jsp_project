@@ -20,7 +20,8 @@ import com.fssa.turbotrip.service.exception.ServiceException;
 @WebServlet("/CreateBookingServlet")
 public class CreateBookingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

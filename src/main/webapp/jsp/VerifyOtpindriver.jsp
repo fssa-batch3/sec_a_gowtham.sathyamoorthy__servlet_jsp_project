@@ -159,7 +159,7 @@ border: none;
 			<div class="card">
 
 				<h2 class="center-text">OTP Verification</h2>
-				<p class="center-text">Enter the 6-digit OTP sent to your email
+				<p class="center-text">Enter the OTP sent to your email or SMS
 					or phone.</p>
 
 				<div class="center-text">

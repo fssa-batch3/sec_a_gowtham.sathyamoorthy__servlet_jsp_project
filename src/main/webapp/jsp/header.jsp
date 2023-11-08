@@ -15,6 +15,8 @@
 <style>
 .h12{
 color:white;
+font-size:25px;
+font-weight:bold;
 }
 </style>
 <body>
@@ -48,7 +50,7 @@ color:white;
       <div class="logo">
       <a href= "<%=request.getContextPath()%>/index.jsp">  <img src="<%=request.getContextPath()%>/assets/turbostrip.png" alt="logo" /></a>
       </div>
-      <div class="head"><h1 class="h12">Turbo trip</h1></div>
+      <div class="head"><p class="h12">Turbo trip</p></div>
       <ul class="snip">
         <li class="current"><a href="<%=request.getContextPath()%>/jsp/homepage.jsp" data-hover="Home">Home</a></li>
         <li>

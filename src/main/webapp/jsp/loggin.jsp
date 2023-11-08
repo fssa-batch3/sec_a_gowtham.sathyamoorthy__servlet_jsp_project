@@ -62,7 +62,7 @@ button[type="submit"] {
 h1 {
 	text-align: center;
 	color: #333;
-	margin-top: 50px;
+	margin-top: 100px;
 }
 
 p {
